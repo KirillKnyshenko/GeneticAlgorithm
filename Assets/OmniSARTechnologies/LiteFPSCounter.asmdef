@@ -1,0 +1,16 @@
+{
+    "name": "LiteFPSCounter",
+    "rootNamespace": "",
+    "references": [
+        "GUID:39c3d3fd9cffa2d4ea5d3c87958ca60c"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
