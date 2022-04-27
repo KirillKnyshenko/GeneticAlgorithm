@@ -9,8 +9,9 @@ public class Manager : MonoBehaviour
     
     public World world;
     public Cell[,] cells;
+    [SerializeField] private List<Cell> _poolCell = new List<Cell>();
     private List<Cell> _activeCells = new List<Cell>();
-    private List<Cell> _passiveCells = new List<Cell>();
+    
     [SerializeField] private GameObject _cell;
     [SerializeField] private Transform _parentOfCell;
 
@@ -18,6 +19,7 @@ public class Manager : MonoBehaviour
     {
         Instance = this;
         cells = new Cell[world.size, world.size];
+        StartPool();
         StartCoroutine(Tick());
     }
 
@@ -34,24 +36,56 @@ public class Manager : MonoBehaviour
         while (true)
         {
             ActiveCellTurn();
-            PassiveCellTurn();
             yield return new WaitForSeconds(1f/4);
         }
     }
 
-    public void ActiveCellTurn()
+    public void StartPool()
     {
-        for (int i = 0; i < _activeCells.Count; i++)
+        for (int i = 0; i < world.size * world.size; i++)
         {
-            _activeCells[i].Action();
+            var inst = Instantiate(_cell, _parentOfCell);
+            Cell cell = new Cell(inst.transform);
+            _poolCell.Add(cell);
         }
     }
     
-    public void PassiveCellTurn()
+    public void BackToPool(Cell cell)
     {
-        for (int i = 0; i < _passiveCells.Count; i++)
+        _poolCell.Add(cell);
+    }
+    
+    public Cell GetFromPool()
+    {
+        if (_poolCell.Count > 0)
         {
-            
+            Cell cell = _poolCell[0];
+            AddActiveCell(_poolCell[0], _poolCell[0].Position);
+            _poolCell.RemoveAt(0);
+            return cell;
+        }
+        return null;
+    }
+    
+    public void ActiveCellTurn()
+    {
+        List<int> cellToDead = new List<int>();
+        
+        for (int i = 0; i < _activeCells.Count; i++)
+        {
+            if (!_activeCells[i].IsDead)
+            {
+                _activeCells[i].Action();
+            }
+            else
+            {
+                cellToDead.Add(i);
+            }
+        }
+        
+        for (int i = 0; i < cellToDead.Count; i++)
+        {
+            _activeCells.RemoveAt(cellToDead[i]-i);
         }
     }
     
@@ -70,14 +104,14 @@ public class Manager : MonoBehaviour
 
     public void CreateCell()
     {
-        var cell = new Cell();
+        var cell = GetFromPool();
 
         cell.Initialization(world.maxGens, RandomPointCell(), null, world.maxEnergy);
     }
     
     public void CreateCell(Vector2Int position, float energy)
     {
-        var cell = new Cell();
+        var cell = GetFromPool();
 
         cell.Initialization(world.maxGens, position, null, energy);
     }
@@ -91,7 +125,7 @@ public class Manager : MonoBehaviour
             var x = Random.Range(0, world.size);
             var y = Random.Range(0, world.size);
             position = new Vector2Int(x, y);
-        } while (CheckActiveCell(position) != null);
+        } while (cells[position.x, position.y] != null || cells[position.x, position.y]?.IsDead == true);
 
         if (cells[position.x, position.y] != null)
         {
@@ -103,8 +137,7 @@ public class Manager : MonoBehaviour
 
     public Cell CheckCell(Vector2Int position)
     {
-        position = CheckOfFrame(position);
-        
+
         if (cells[position.x, position.y] == null)
         {
             return null;
@@ -115,17 +148,6 @@ public class Manager : MonoBehaviour
         }
     }
 
-    public Cell CheckActiveCell(Vector2Int position)
-    {
-        position = CheckOfFrame(position);
-        return _activeCells.Find(a => a.Position == new Vector2Int(position.x, position.y));
-    }
-    
-    public GameObject DrawCell(Vector2Int position)
-    {
-        return Instantiate(_cell, (Vector2)position, Quaternion.identity, _parentOfCell);
-    }
-    
     public void AddActiveCell(Cell cell, Vector2Int position)
     {
         _activeCells.Add(cell);
@@ -135,15 +157,15 @@ public class Manager : MonoBehaviour
     public void RemoveActiveCell(Cell cell)
     {
         _activeCells.Remove(cell);
-        _passiveCells.Add(cell);
     }
     
     public void RemoveCell(Vector2Int position)
     {
         if (cells[position.x, position.y] != null)
         {
-            _passiveCells.Remove(cells[position.x, position.y]);
+            print(position);
             cells[position.x, position.y].RemoveVisual();
+            BackToPool(cells[position.x, position.y]);
             cells[position.x, position.y] = null;
         }
     }

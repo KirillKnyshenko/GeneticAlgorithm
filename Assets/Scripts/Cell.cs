@@ -4,6 +4,7 @@ using UnityEngine;
 using Object = UnityEngine.Object;
 using Random = UnityEngine.Random;
 
+[System.Serializable]
 public class Cell
 {
     public bool IsDead;
@@ -44,7 +45,14 @@ public class Cell
     public Vector2Int Rotation => _rotation;
     
     private Transform _visual;
+    private SpriteRenderer _visualSpriteRenderer;
 
+    public Cell(Transform visual)
+    {
+        _visual = visual;
+        _visualSpriteRenderer = visual.GetComponent<SpriteRenderer>();
+    }    
+    
     public void Initialization(int maxGens, Vector2Int position, byte[] gens, float energy)
     {
         //Гены
@@ -78,27 +86,25 @@ public class Cell
         //Поворот
         _rotation = Rotate();
 
-        //Инициализация в мире
-        Manager.Instance.AddActiveCell(this, _position);
-        
         //Отображение
-        _visual = Manager.Instance.DrawCell(_position).transform;
-        
+        _visual.position = (Vector2)_position;
+        _visual.gameObject.SetActive(true);
+
         //Тип питания
         if (Gens[0] < 10)
         {
             _type = World.PowerType.Carnivores;
-            //_visual.GetComponent<SpriteRenderer>().color = Color.red;
+            _visualSpriteRenderer.color = Color.red;
         }
         else if (Gens[0] < 60)
         {
             _type = World.PowerType.Herbivorous;
-            //_visual.GetComponent<SpriteRenderer>().color = Color.green;
+            _visualSpriteRenderer.color = Color.green;
         }
         else
         {
             _type = World.PowerType.Omnivorous;
-            //_visual.GetComponent<SpriteRenderer>().color = Color.blue;
+            _visualSpriteRenderer.color = Color.blue;
         }
     }
     
@@ -117,15 +123,15 @@ public class Cell
 
     private void ActionVariant()
     {
-        if (Gens[_lastGen] <= 16)
+        if (Gens[_lastGen] <= 5)
         {
             Move();
         }
-        else if (Gens[_lastGen] <= 32)
+        else if (Gens[_lastGen] <= 10)
         {
             _rotation = Rotate();
         }
-        else if (Gens[_lastGen] <= 48)
+        else if (Gens[_lastGen] <= 20)
         {
             Division();
         }
@@ -177,15 +183,15 @@ public class Cell
         if (Energy > Manager.Instance.world.needForDivision)
         {
             var position = _position + _rotation;
-
+        
             position = Manager.Instance.CheckOfFrame(position);
-
-            if (Manager.Instance.CheckActiveCell(position) == null)
+        
+            if (Manager.Instance.cells[position.x, position.y] == null) //|| Manager.Instance.cells[position.x, position.y]?.IsDead == true)
             {
                 var babyCost = Manager.Instance.world.maxEnergy * Manager.Instance.world.babyCost;
                 Manager.Instance.RemoveCell(position);
                 Manager.Instance.CreateCell(position, babyCost);
-
+                
                 Energy -= babyCost;
             }
         }
@@ -216,7 +222,8 @@ public class Cell
             {
                 if ((i != 0) && (j != 0))
                 {
-                    Cell cellVictim = Manager.Instance.CheckCell(_position + new Vector2Int(i, j));
+                    var position = Manager.Instance.CheckOfFrame(_position + new Vector2Int(i, j));
+                    Cell cellVictim = Manager.Instance.CheckCell(position);
                     
                     if (cellVictim != null)
                     {
@@ -231,7 +238,7 @@ public class Cell
                             if (Energy > cellVictim.Energy)
                             {
                                 EnergyConsumption(cellVictim.Energy * 0.6f);
-                                Manager.Instance.RemoveActiveCell(cellVictim);
+                                cellVictim.IsDead = true;
                                 Manager.Instance.RemoveCell(cellVictim.Position);
                                 return true;
                             }
@@ -267,14 +274,13 @@ public class Cell
         IsDead = true;
 
         _visual.GetComponent<SpriteRenderer>().color = new Color(1, 0.5f, 1, 0.5f);
-        Manager.Instance.RemoveActiveCell(this);
     }
 
     public void RemoveVisual()
     {
         if (_visual != null)
         {
-            Object.Destroy(_visual.gameObject);
+            _visual.gameObject.SetActive(false);
         }
     }
     
