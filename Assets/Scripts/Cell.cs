@@ -131,22 +131,65 @@ public class Cell
 
     private void ActionVariant()
     {
-        if (Gens[_lastGen] <= 5)
+
+        #region Carnivores
+
+        if (_type == World.PowerType.Carnivores)
         {
-            Move();
+            if (Gens[_lastGen] >= 10)
+            {
+                Move();
+            }
+            
+            if (Gens[_lastGen] >= 45)
+            {
+                _rotation = Rotate();
+            }
         }
-        else if (Gens[_lastGen] <= 10)
+
+        #endregion
+        
+        #region Herbivorous
+
+        if (_type == World.PowerType.Herbivorous)
         {
-            _rotation = Rotate();
+            if (Gens[_lastGen] >= 54)
+            {
+                Move();
+            }
+            else if (Gens[_lastGen] >= 40)
+            {
+                _rotation = Rotate();
+            }
         }
-        else if (Gens[_lastGen] <= 20)
+
+        #endregion
+        
+        #region Omnivorous
+        
+        if (_type == World.PowerType.Omnivorous)
+        {
+            if (Gens[_lastGen] >= 32)
+            {
+                Move();
+            }
+            
+            if (Gens[_lastGen] >= 55)
+            {
+                _rotation = Rotate();
+            }
+        }
+        
+        #endregion
+        
+        //Размножение если текущий ген больше 60 и ген отвечающий за плодовитость больше среднего размера гена у клетки
+        if (Gens[_lastGen] >= 50 && Gens[2] >= (_sumOfGens / Manager.Instance.world.maxGens))
         {
             Division();
         }
-        else if (Gens[_lastGen] <= 64)
-        {
-            Eating();
-        }
+        
+        Eating();
+        
         Energy = EnergyConsumption(Manager.Instance.world.actionEnergy);
     }
 
@@ -162,14 +205,6 @@ public class Cell
             Manager.Instance.cells[_position.x, _position.y] = null;
             _position = position;
             _visual.position = (Vector2)position;
-        }
-        else if (_type != World.PowerType.Herbivorous)
-        {
-            Eating();
-        }
-        else
-        {
-            Division();
         }
     }
 
@@ -188,7 +223,7 @@ public class Cell
 
     private void Division()
     {
-        if (Energy > Manager.Instance.world.needForDivision)
+        if (Energy >= (Manager.Instance.world.needForDivision * Manager.Instance.world.maxEnergy))
         {
             var position = _position + _rotation;
         
@@ -217,44 +252,45 @@ public class Cell
 
             if (!isAte && (_type == World.PowerType.Omnivorous))
             {
-                Energy += Manager.Instance.world.energyBoost * 0.4f;
+                Energy += Manager.Instance.world.energyBoost * 0.3f;
             }
         }
     }
 
     private bool FoundMeatAround()
     {
-        for (int i = -1; i < 2; i++)
+        // for (int i = -1; i < 2; i++)
+        // {
+        //     for (int j = -1; j < 2; j++)
+        //     {
+        //         if ((i != 0) && (j != 0))
+        //         {
+        //         }
+        //     }
+        // }
+
+        Vector2Int position = Manager.Instance.CheckOfFrame(_position + _rotation);
+        Cell cellVictim = Manager.Instance.CheckCell(position);
+
+        if (cellVictim != null)
         {
-            for (int j = -1; j < 2; j++)
+            //Съесть ли мёртвую клетку
+            if (cellVictim.IsDead)
             {
-                if ((i != 0) && (j != 0))
-                {
-                    var position = Manager.Instance.CheckOfFrame(_position + new Vector2Int(i, j));
-                    Cell cellVictim = Manager.Instance.CheckCell(position);
-                    
-                    if (cellVictim != null)
-                    {
-                        if (cellVictim.IsDead)
-                        {
-                            EnergyConsumption(cellVictim.Energy);
-                            Manager.Instance.RemoveCell(cellVictim.Position);
-                            return true;
-                        }
-                        else if(Gens[1] > 32)
-                        {
-                            if (Energy > cellVictim.Energy)
-                            {
-                                EnergyConsumption(cellVictim.Energy * 0.6f);
-                                cellVictim.IsDead = true;
-                                return true;
-                            }
-                        }
-                    }
-                }
+                Energy += cellVictim.Energy;
+                Manager.Instance.RemoveCell(cellVictim.Position);
+                return true;
+            }
+
+            //Атаковать ли живую
+            if ((Gens[1] > 32) && (Energy < (Manager.Instance.world.maxEnergy * 0.8f)))
+            {
+                Energy += cellVictim.Energy * 0.6f;
+                cellVictim.IsDead = true;
+                return true;
             }
         }
-
+        
         return false;
     }
 

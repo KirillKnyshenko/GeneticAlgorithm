@@ -36,7 +36,7 @@ public class Manager : MonoBehaviour
         while (true)
         {
             ActiveCellTurn();
-            yield return new WaitForSeconds(1f/4);
+            yield return new WaitForSeconds(1f/2);
         }
     }
 
