@@ -326,8 +326,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   world:
-    size: 30
-    countOfBorn: 3
+    size: 200
+    countOfBorn: 1
     maxGens: 10
     maxEnergy: 100
     actionEnergy: 3
@@ -336,7 +336,6 @@ MonoBehaviour:
     needForDivision: 0.6
     babyCost: 0.2
     isBirthAfterDeath: 0
-  _poolCell: []
   _cell: {fileID: 8700582657034329835, guid: 2781f90dbfee53840aa04127c89a1f33, type: 3}
   _parentOfCell: {fileID: 1847065405}
 --- !u!4 &819160528

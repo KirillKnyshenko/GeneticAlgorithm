@@ -4,7 +4,6 @@ using UnityEngine;
 using Object = UnityEngine.Object;
 using Random = UnityEngine.Random;
 
-[System.Serializable]
 public class Cell
 {
     public bool IsDead;
@@ -55,6 +54,18 @@ public class Cell
     
     public void Initialization(int maxGens, Vector2Int position, byte[] gens, float energy)
     {
+        //Энергия
+        Energy = energy;
+        
+        //Клетка жива
+        IsDead = false;
+        
+        //Возраст клетки 0
+        YearsOld = 0;
+
+        //Начинать действия с 0 гена
+        _lastGen = 0;
+        
         //Гены
         if (gens == null)
         {
@@ -76,9 +87,6 @@ public class Cell
         {
             _sumOfGens += Gens[i];
         }
-
-        //Энергия
-        Energy = energy;
 
         //Позиция
         _position = position;
@@ -186,11 +194,11 @@ public class Cell
         
             position = Manager.Instance.CheckOfFrame(position);
         
-            if (Manager.Instance.cells[position.x, position.y] == null) //|| Manager.Instance.cells[position.x, position.y]?.IsDead == true)
+            if (Manager.Instance.cells[position.x, position.y] == null || Manager.Instance.cells[position.x, position.y]?.IsDead == true)
             {
                 var babyCost = Manager.Instance.world.maxEnergy * Manager.Instance.world.babyCost;
                 Manager.Instance.RemoveCell(position);
-                Manager.Instance.CreateCell(position, babyCost);
+                Manager.Instance.CreateCell(position, babyCost, Gens);
                 
                 Energy -= babyCost;
             }
@@ -239,7 +247,6 @@ public class Cell
                             {
                                 EnergyConsumption(cellVictim.Energy * 0.6f);
                                 cellVictim.IsDead = true;
-                                Manager.Instance.RemoveCell(cellVictim.Position);
                                 return true;
                             }
                         }
@@ -258,7 +265,7 @@ public class Cell
 
     private bool IsDeath()
     {
-        if (Energy <= 0 || Manager.Instance.world.yearsOldMax < _yearsOld)
+        if (Energy <= 0 || Manager.Instance.world.yearsOldMax <= YearsOld)
         {
             Death();
             return true;

@@ -9,7 +9,7 @@ public class Manager : MonoBehaviour
     
     public World world;
     public Cell[,] cells;
-    [SerializeField] private List<Cell> _poolCell = new List<Cell>();
+    private List<Cell> _poolCell = new List<Cell>();
     private List<Cell> _activeCells = new List<Cell>();
     
     [SerializeField] private GameObject _cell;
@@ -46,6 +46,7 @@ public class Manager : MonoBehaviour
         {
             var inst = Instantiate(_cell, _parentOfCell);
             Cell cell = new Cell(inst.transform);
+            cell.RemoveVisual();
             _poolCell.Add(cell);
         }
     }
@@ -55,12 +56,12 @@ public class Manager : MonoBehaviour
         _poolCell.Add(cell);
     }
     
-    public Cell GetFromPool()
+    public Cell GetFromPool(Vector2Int position)
     {
         if (_poolCell.Count > 0)
         {
             Cell cell = _poolCell[0];
-            AddActiveCell(_poolCell[0], _poolCell[0].Position);
+            AddActiveCell(cell, position);
             _poolCell.RemoveAt(0);
             return cell;
         }
@@ -104,18 +105,34 @@ public class Manager : MonoBehaviour
 
     public void CreateCell()
     {
-        var cell = GetFromPool();
+        Vector2Int position = RandomPointCell();
+        var cell = GetFromPool(position);
 
-        cell.Initialization(world.maxGens, RandomPointCell(), null, world.maxEnergy);
+        cell.Initialization(world.maxGens, position, null, world.maxEnergy);
     }
     
-    public void CreateCell(Vector2Int position, float energy)
+    public void CreateCell(Vector2Int position, float energy, byte[] gens)
     {
-        var cell = GetFromPool();
+        var cell = GetFromPool(position);
 
-        cell.Initialization(world.maxGens, position, null, energy);
+        cell.Initialization(world.maxGens, position, Mutation(gens), energy);
     }
 
+    public byte[] Mutation(byte[] gens)
+    {
+        byte[] childrenGen = new byte[world.maxGens];
+        
+        int mutateGen = Random.Range(0, world.maxGens);
+
+        for (int i = 0; i < gens.Length; i++)
+        {
+            childrenGen[i] = gens[i];
+        }
+        childrenGen[mutateGen] = (byte) Random.Range(0, 64);
+        
+        return childrenGen;
+    }
+    
     public Vector2Int RandomPointCell()
     {
         Vector2Int position;
@@ -163,7 +180,6 @@ public class Manager : MonoBehaviour
     {
         if (cells[position.x, position.y] != null)
         {
-            print(position);
             cells[position.x, position.y].RemoveVisual();
             BackToPool(cells[position.x, position.y]);
             cells[position.x, position.y] = null;
