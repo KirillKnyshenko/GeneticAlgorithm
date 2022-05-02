@@ -69,6 +69,11 @@ public class CellCore
             visual.position = (Vector2)position;
         }
     }
+
+    public void Distributing(Cell cell, float energy)
+    {
+        cell.EnergyConsumption(energy);
+    }
     
     public bool IsSiblings(Cell cell)
     {

@@ -6,7 +6,7 @@ using Random = UnityEngine.Random;
 
 public class Cell : CellCore
 {
-    private Color _genColor, _typeColor;
+    private Color _genColor, _typeColor, _energyColor;
     
     private byte _lastGen = 0;
 
@@ -111,6 +111,12 @@ public class Cell : CellCore
 
     private void ActionVariant()
     {
+        if (Manager.Instance.colorMod ==Manager.ViewColor.EnergyColor)
+        {
+            CreateEnergyColor();
+            spriteRenderer.color = _energyColor;
+        }
+        
         Eating();
         
         // Плотоядные
@@ -150,7 +156,7 @@ public class Cell : CellCore
                 _rotation = Rotate();
             }
 
-            //EnergyDistribution();
+            EnergyDistribution();
         }
 
         #endregion
@@ -246,9 +252,13 @@ public class Cell : CellCore
                         {
                             if (cellDistribution.isDead)
                             {
-                                if (cellDistribution.GetEnergy() < GetEnergy())
+                                if (IsSiblings(cellDistribution))
                                 {
-                                    //print("Distribution");
+                                    if (cellDistribution.GetEnergy() < GetEnergy())
+                                    {
+                                        float energyForDistributing = (GetEnergy() - cellDistribution.GetEnergy()) * 0.5f;
+                                        Distributing(cellDistribution, energyForDistributing);
+                                    }
                                 }
                             }
                         }
@@ -318,7 +328,19 @@ public class Cell : CellCore
     {
         if (!isDead)
         {
-            spriteRenderer.color = Manager.Instance.colorMod == Manager.ViewColor.TypeColor ? _typeColor : _genColor;
+            if (Manager.Instance.colorMod == Manager.ViewColor.EnergyColor)
+            {
+                CreateEnergyColor();
+                spriteRenderer.color = _energyColor;
+            }
+            else if (Manager.Instance.colorMod == Manager.ViewColor.TypeColor)
+            {
+                spriteRenderer.color = _typeColor;
+            }
+            else if (Manager.Instance.colorMod == Manager.ViewColor.GenColor)
+            {
+                spriteRenderer.color = _genColor;
+            }
         }
         else
         {
@@ -352,5 +374,10 @@ public class Cell : CellCore
         _genColor = Color.HSVToRGB(h, s * 2f, v);
     }
 
+    public void CreateEnergyColor()
+    {
+        _energyColor = Color.Lerp(Color.black, Color.green, GetEnergy() / Manager.Instance.world.maxEnergy);
+    }
+    
     #endregion
 }

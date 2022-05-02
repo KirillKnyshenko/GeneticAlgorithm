@@ -372,14 +372,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   world:
-    size: 150
-    countOfBorn: 5
+    size: 200
+    countOfBorn: 8
     maxGens: 10
-    maxEnergy: 40
-    actionEnergy: 10
+    maxEnergy: 60
+    actionEnergy: 8
     energyBoost: 1
     relatedness: 30
-    yearsOldMax: 200
+    yearsOldMax: 150
     chanceMutate: 0.1
     babyCost: 0.7
     isBirthAfterDeath: 0

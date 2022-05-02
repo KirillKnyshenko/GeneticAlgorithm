@@ -12,7 +12,7 @@ public class Manager : MonoBehaviour
     private List<Cell> _poolCell = new List<Cell>();
     private List<Cell> _activeCells = new List<Cell>();
     
-    public enum ViewColor {GenColor, TypeColor}
+    public enum ViewColor {GenColor, TypeColor, EnergyColor}
 
     public ViewColor colorMod;
         
@@ -259,6 +259,9 @@ public class Manager : MonoBehaviour
                 colorMod = ViewColor.TypeColor;
                 break;
             case ViewColor.TypeColor:
+                colorMod = ViewColor.EnergyColor;
+                break;
+            case ViewColor.EnergyColor:
                 colorMod = ViewColor.GenColor;
                 break;
         }
