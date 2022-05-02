@@ -4,62 +4,31 @@ using UnityEngine;
 using Object = UnityEngine.Object;
 using Random = UnityEngine.Random;
 
-public class Cell
+public class Cell : CellCore
 {
-    public bool IsDead;
-    public byte[] Gens { get; private set; }
+    private Color _genColor, _typeColor;
+    
     private byte _lastGen = 0;
-    private byte _sumOfGens;
-    
-    private World.PowerType _type;
-    public World.PowerType Type => _type;
-    
-    private float _energy;
-    public float Energy
-    {
-        get => _energy;
-        set
-        {
-            _energy = Mathf.Clamp(value, 0, Manager.Instance.world.maxEnergy);
-            IsDeath();
-        }
-    }
 
-    private int _yearsOld;
-    public int YearsOld 
-    {
-        get => _yearsOld;
-        set
-        {
-            _yearsOld = value;
-            IsDeath();
-        }
-    }
-
-    private Vector2Int _position;
-
-    public Vector2Int Position => _position;
+    private bool _isAte;
 
     private Vector2Int _rotation;
     public Vector2Int Rotation => _rotation;
-    
-    private Transform _visual;
-    private SpriteRenderer _visualSpriteRenderer;
 
-    public Cell(Transform visual)
+    public Cell(Transform newVisual)
     {
-        _visual = visual;
-        _visualSpriteRenderer = visual.GetComponent<SpriteRenderer>();
+        visual = newVisual;
+        spriteRenderer = visual.GetComponent<SpriteRenderer>();
     }    
     
-    public void Initialization(int maxGens, Vector2Int position, byte[] gens, float energy)
+    public void Initialization(int maxGens, Vector2Int newPosition, byte[] newGens, float energy)
     {
         //Энергия
-        Energy = energy;
+        SetEnergy(energy);
         
         //Клетка жива
-        IsDead = false;
-        
+        isDead = false;
+
         //Возраст клетки 0
         YearsOld = 0;
 
@@ -67,149 +36,158 @@ public class Cell
         _lastGen = 0;
         
         //Гены
-        if (gens == null)
+        if (newGens == null)
         {
-            Gens = new byte[maxGens];
+            gens = new byte[maxGens];
             
             for (int i = 0; i < maxGens; i++)
             {
-                Gens[i] = (byte) Random.Range(0, 64);
+                gens[i] = (byte) Random.Range(0, 10);
             }
         }
         else
         {
-            Gens = gens;
+            gens = new byte[maxGens];
+            
+            for (int i = 0; i < maxGens; i++)
+            {
+                gens[i] = newGens[i];
+            }
         }
 
         //Сумма генов
-        byte sum = 0;
-        for (int i = 0; i < Gens.Length; i++)
+        for (int i = 0; i < gens.Length; i++)
         {
-            _sumOfGens += Gens[i];
+            _sumOfGens += gens[i];
         }
 
         //Позиция
-        _position = position;
+        position = newPosition;
 
         //Поворот
         _rotation = Rotate();
 
         //Отображение
-        _visual.position = (Vector2)_position;
-        _visual.gameObject.SetActive(true);
+        visual.position = (Vector2)position;
+        visual.gameObject.SetActive(true);
 
         //Тип питания
-        if (Gens[0] < 10)
+        if (gens[0] > 6)
         {
-            _type = World.PowerType.Carnivores;
-            _visualSpriteRenderer.color = Color.red;
+            type = World.PowerType.Carnivores;
+            _typeColor = Color.red;
         }
-        else if (Gens[0] < 60)
+        else 
         {
-            _type = World.PowerType.Herbivorous;
-            _visualSpriteRenderer.color = Color.green;
+            type = World.PowerType.Herbivorous;
+            _typeColor = Color.green;
         }
-        else
-        {
-            _type = World.PowerType.Omnivorous;
-            _visualSpriteRenderer.color = Color.blue;
-        }
+        // else
+        // {
+        //     _type = World.PowerType.Omnivorous;
+        //     spriteRenderer.color = Color.blue;
+        // }
+        
+        CreateGenColor();
+        DrawColor();
     }
     
     public void Action()
     {
-        if (Gens.Length <= _lastGen)
+        // Обнуление текущего гена, если он вышел за рамки
+        if (gens.Length <= _lastGen)
         {
             _lastGen = 0;
         }
 
+        // Проявление активности
         ActionVariant();
         
+        // Переход к следующему гену
         _lastGen++;
-        _yearsOld++;
+        // Взросление клетки
+        YearsOld++;
     }
 
     private void ActionVariant()
     {
-
-        #region Carnivores
-
-        if (_type == World.PowerType.Carnivores)
-        {
-            if (Gens[_lastGen] >= 10)
-            {
-                Move();
-            }
-            
-            if (Gens[_lastGen] >= 45)
-            {
-                _rotation = Rotate();
-            }
-        }
-
-        #endregion
-        
-        #region Herbivorous
-
-        if (_type == World.PowerType.Herbivorous)
-        {
-            if (Gens[_lastGen] >= 54)
-            {
-                Move();
-            }
-            else if (Gens[_lastGen] >= 40)
-            {
-                _rotation = Rotate();
-            }
-        }
-
-        #endregion
-        
-        #region Omnivorous
-        
-        if (_type == World.PowerType.Omnivorous)
-        {
-            if (Gens[_lastGen] >= 32)
-            {
-                Move();
-            }
-            
-            if (Gens[_lastGen] >= 55)
-            {
-                _rotation = Rotate();
-            }
-        }
-        
-        #endregion
-        
-        //Размножение если текущий ген больше 60 и ген отвечающий за плодовитость больше среднего размера гена у клетки
-        if (Gens[_lastGen] >= 50 && Gens[2] >= (_sumOfGens / Manager.Instance.world.maxGens))
-        {
-            Division();
-        }
-        
         Eating();
         
-        Energy = EnergyConsumption(Manager.Instance.world.actionEnergy);
+        // Плотоядные
+        #region Carnivores
+
+        if (type == World.PowerType.Carnivores)
+        {
+            Division();
+            
+            if ((gens[_lastGen] == 3 || gens[_lastGen] == 4) && !_isAte)
+            {
+                Move();
+            }
+            else if (gens[_lastGen] == 5 || gens[_lastGen] == 6)
+            {
+                _rotation = Rotate();
+            }
+        }
+
+        #endregion
+        
+        // Фотосинтезирующие
+        #region Herbivorous
+
+        if (type == World.PowerType.Herbivorous)
+        {
+            if (gens[_lastGen] == 2)
+            {
+                Division();
+            }
+            else if (gens[_lastGen] == 9)
+            {
+                Move();
+            }
+            else if (gens[_lastGen] == 8)
+            {
+                _rotation = Rotate();
+            }
+
+            //EnergyDistribution();
+        }
+
+        #endregion
+        
+        // Всеядные
+        #region Omnivorous
+        
+        if (type == World.PowerType.Omnivorous)
+        {
+            if (gens[_lastGen] == 1)
+            {
+                Move();
+            }
+            
+            if (gens[_lastGen] == 2)
+            {
+                _rotation = Rotate();
+            }
+        }
+        
+        #endregion
+        
     }
 
     private void Move()
     {
-        var position = _position + _rotation;
+        Vector2Int newPosition = Position + Rotation;
 
-        position = Manager.Instance.CheckOfFrame(position);
-        
-        if (Manager.Instance.CheckCell(position) == null)
-        {
-            Manager.Instance.cells[position.x, position.y] = this;
-            Manager.Instance.cells[_position.x, _position.y] = null;
-            _position = position;
-            _visual.position = (Vector2)position;
-        }
+        Moving(newPosition, this);
     }
 
     private Vector2Int Rotate()
     {
+        if (GetEnergy() < Manager.Instance.world.actionEnergy / 2) return Rotation;
+        
+        EnergyConsumption(Manager.Instance.world.actionEnergy / 2);
+        
         Vector2Int rotation;
         do
         {
@@ -223,156 +201,156 @@ public class Cell
 
     private void Division()
     {
-        if (Energy >= (Manager.Instance.world.needForDivision * Manager.Instance.world.maxEnergy))
+        float babyCost;
+        if (type == World.PowerType.Carnivores)
         {
-            var position = _position + _rotation;
-        
-            position = Manager.Instance.CheckOfFrame(position);
-        
-            if (Manager.Instance.cells[position.x, position.y] == null || Manager.Instance.cells[position.x, position.y]?.IsDead == true)
-            {
-                var babyCost = Manager.Instance.world.maxEnergy * Manager.Instance.world.babyCost;
-                Manager.Instance.RemoveCell(position);
-                Manager.Instance.CreateCell(position, babyCost, Gens);
-                
-                Energy -= babyCost;
-            }
-        }
-    }
-
-    private void Eating()
-    {
-        if (_type == World.PowerType.Herbivorous)
-        {
-            Energy += Manager.Instance.world.energyBoost;
+            babyCost = (Manager.Instance.world.babyCost / 10) * Manager.Instance.world.maxEnergy;
         }
         else
         {
-            bool isAte = FoundMeatAround();
+            babyCost = Manager.Instance.world.babyCost * Manager.Instance.world.maxEnergy;
+        }
 
-            if (!isAte && (_type == World.PowerType.Omnivorous))
+        babyCost -= gens[2];
+        
+        if (GetEnergy() >= (babyCost + Manager.Instance.world.actionEnergy))
+        {
+            var newPosition = Position + Rotation;
+        
+            newPosition = Manager.Instance.CheckOfFrame(newPosition);
+        
+            if (Manager.Instance.cells[newPosition.x, newPosition.y] == null || Manager.Instance.cells[newPosition.x, newPosition.y]?.isDead == true || Killing(Manager.Instance.cells[newPosition.x, newPosition.y]))
             {
-                Energy += Manager.Instance.world.energyBoost * 0.3f;
+                Manager.Instance.RemoveCell(newPosition);
+                Manager.Instance.CreateCell(newPosition, babyCost, gens);
+                
+                EnergyConsumption(babyCost + Manager.Instance.world.actionEnergy);
             }
         }
     }
 
-    private bool FoundMeatAround()
+    public void EnergyDistribution()
     {
-        // for (int i = -1; i < 2; i++)
-        // {
-        //     for (int j = -1; j < 2; j++)
-        //     {
-        //         if ((i != 0) && (j != 0))
-        //         {
-        //         }
-        //     }
-        // }
+        if (GetEnergy() > (Manager.Instance.world.maxEnergy * 0.4f))
+        {
+            for (int i = -1; i < 2; i++)
+            {
+                for (int j = -1; j < 2; j++)
+                {
+                    if ((i != 0) && (j != 0))
+                    {
+                        Vector2Int positionDistribution = Manager.Instance.CheckOfFrame(new Vector2Int(i, j));
+                        Cell cellDistribution = Manager.Instance.CheckCell(positionDistribution);
 
-        Vector2Int position = Manager.Instance.CheckOfFrame(_position + _rotation);
-        Cell cellVictim = Manager.Instance.CheckCell(position);
+                        if (cellDistribution != null)
+                        {
+                            if (cellDistribution.isDead)
+                            {
+                                if (cellDistribution.GetEnergy() < GetEnergy())
+                                {
+                                    //print("Distribution");
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    private void Eating()
+    {
+        if (type == World.PowerType.Herbivorous)
+        {
+            EnergyAdd(Manager.Instance.world.energyBoost + (gens[5] / 10f));
+        }
+        else
+        {
+            _isAte = FoundMeat();
+
+            if (!_isAte && (type == World.PowerType.Omnivorous))
+            {
+                EnergyAdd(Manager.Instance.world.energyBoost * 0.3f);
+            }
+        }
+    }
+
+    private bool FoundMeat()
+    {
+        Vector2Int positionVictim = Manager.Instance.CheckOfFrame(Position + Rotation);
+        Cell cellVictim = Manager.Instance.CheckCell(positionVictim);
 
         if (cellVictim != null)
         {
-            //Съесть ли мёртвую клетку
-            if (cellVictim.IsDead)
+            //Съесть клетку если она мертва
+            if (cellVictim.isDead)
             {
-                Energy += cellVictim.Energy;
-                Manager.Instance.RemoveCell(cellVictim.Position);
-                return true;
+                if (cellVictim.GetEnergy() > 0)
+                {
+                    EnergyAdd(cellVictim.GetEnergy());
+                    Manager.Instance.RemoveCell(cellVictim.Position);
+
+                    Moving(positionVictim, this);
+                    return true;
+                }
+
+                Rotate();
             }
 
-            //Атаковать ли живую
-            if ((Gens[1] > 32) && (Energy < (Manager.Instance.world.maxEnergy * 0.8f)))
+            //Условие для атаки живой клетки
+           // if (gens[1] > 2)
             {
-                Energy += cellVictim.Energy * 0.6f;
-                cellVictim.IsDead = true;
-                return true;
+                if (Killing(cellVictim))
+                {
+                    EnergyAdd(cellVictim.GetEnergy());
+                    Moving(positionVictim, this);
+                    return true;
+                }
             }
         }
         
         return false;
     }
 
-    private float EnergyConsumption(float consumption)
-    {
-        return Energy - consumption;
-    }
+    #region Color
 
-    private bool IsDeath()
+    public void DrawColor()
     {
-        if (Energy <= 0 || Manager.Instance.world.yearsOldMax <= YearsOld)
+        if (!isDead)
         {
-            Death();
-            return true;
+            spriteRenderer.color = Manager.Instance.colorMod == Manager.ViewColor.TypeColor ? _typeColor : _genColor;
         }
         else
         {
-            return false;
-        }
-    }
-
-    private void Death()
-    {
-        IsDead = true;
-
-        _visual.GetComponent<SpriteRenderer>().color = new Color(1, 0.5f, 1, 0.5f);
-    }
-
-    public void RemoveVisual()
-    {
-        if (_visual != null)
-        {
-            _visual.gameObject.SetActive(false);
+            spriteRenderer.color = Color.black;
         }
     }
     
-    #region Color
-
-    public void CreateColor()
+    public void CreateGenColor()
     {
-        SpriteRenderer spriteRenderer = _visual.GetComponent<SpriteRenderer>();
-        spriteRenderer.color = Color.yellow;
-        
-        byte r, g, b;
-        
-        if ((2 % _sumOfGens) == 0)
+        float r = 0, g = 0, b = 0;
+        var thoughtCount = Manager.Instance.world.maxGens;
+        for (int i = 0; i < thoughtCount; i++)
         {
-            r = (byte)(_sumOfGens * 0.5f);
+            if (i < thoughtCount * 0.3f)
+            {
+                r += gens[i];
+            }
+            else if (i >= thoughtCount * 0.3f && i <= thoughtCount * 0.7f)
+            {
+                g += gens[i];
+            }
+            else
+            {
+                b += gens[i];
+            }
         }
-        else
-        {
-            r = (byte)(_sumOfGens * 0.1f);
-        }
-        
-        if ((2 % _sumOfGens) == 0)
-        {
-            g = (byte)(_sumOfGens * 0.5f);
-        }
-        else
-        {
-            g = (byte)(_sumOfGens * 0.1f);
-        }
-        
-        if ((2 % _sumOfGens) == 0)
-        {
-            b = (byte)(_sumOfGens * 0.5f);
-        }
-        else
-        {
-            b = (byte)(_sumOfGens * 0.1f);
-        }
+        float max = Mathf.Max(Mathf.Max(r, g), b);
+        Color genColor = new Color32((byte)(((r / max) * (255))), (byte)((g / max) * (255)), (byte)((b / max) * (255)), 255);
 
-        spriteRenderer.color = new Color32(r, g, b, 255);
-        print((_sumOfGens * 0.5f));
+        Color.RGBToHSV(genColor, out float h, out float s, out float v);
+        _genColor = Color.HSVToRGB(h, s * 2f, v);
     }
 
-    #endregion
-
-    #region MyMono
-    private void print(object obj)
-    {
-        Debug.Log(obj);
-    }
     #endregion
 }

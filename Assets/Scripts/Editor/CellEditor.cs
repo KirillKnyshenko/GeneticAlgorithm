@@ -21,12 +21,18 @@ public class CellEditor : Editor
         base.OnInspectorGUI();
         if (_cell != null)
         {
+            GUILayout.Label("Умер");
+            GUILayout.Label(_cell.isDead.ToString());
+            
+            GUILayout.Label("Сумма генов");
+            GUILayout.Label(_cell.SumOfGens.ToString());
+            
             GUILayout.Label("Энергия");
-            GUILayout.Label(_cell.Energy.ToString());
+            GUILayout.Label(_cell.GetEnergy().ToString());
             
             GUILayout.Label("Возраст");
             GUILayout.Label(_cell.YearsOld.ToString());
-            
+
             GUILayout.Label("Позиция");
             GUILayout.Label("(" + _cell.Position.x + ", " + _cell.Position.y + ")");
             
@@ -34,7 +40,7 @@ public class CellEditor : Editor
             string gens = "[";
             for (int i = 0; i < Manager.Instance.world.maxGens; i++)
             {
-                gens = gens + _cell.Gens[i].ToString();
+                gens = gens + _cell.gens[i].ToString();
                 if (i == Manager.Instance.world.maxGens - 1)
                 {
                     gens += "]";

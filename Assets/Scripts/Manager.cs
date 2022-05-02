@@ -12,11 +12,16 @@ public class Manager : MonoBehaviour
     private List<Cell> _poolCell = new List<Cell>();
     private List<Cell> _activeCells = new List<Cell>();
     
+    public enum ViewColor {GenColor, TypeColor}
+
+    public ViewColor colorMod;
+        
     [SerializeField] private GameObject _cell;
     [SerializeField] private Transform _parentOfCell;
 
     public void Awake()
     {
+        colorMod = ViewColor.GenColor;
         Instance = this;
         cells = new Cell[world.size, world.size];
         StartPool();
@@ -35,13 +40,44 @@ public class Manager : MonoBehaviour
     {
         while (true)
         {
-            ActiveCellTurn();
             yield return new WaitForSeconds(1f/2);
+            
+            List<int> cellToDead = new List<int>();
+        
+            for (int i = 0; i < _activeCells.Count; i++)
+            {
+                if (_activeCells[i] != null)
+                {
+                    if (!_activeCells[i].isDead)
+                    {
+                        _activeCells[i].Action();
+                    }
+                    else
+                    {
+                        cellToDead.Add(i);
+                    }
+                }
+                else
+                {
+                    cellToDead.Add(i);
+                }
+                
+                if (i % 5000 == 0)
+                {
+                    yield return null;
+                }
+            }
+
+            for (int i = 0; i < cellToDead.Count; i++)
+            {
+                _activeCells.RemoveAt(cellToDead[i]-i);
+            }
         }
     }
 
     public void StartPool()
     {
+        _poolCell = new List<Cell>(world.size * world.size);
         for (int i = 0; i < world.size * world.size; i++)
         {
             var inst = Instantiate(_cell, _parentOfCell);
@@ -60,34 +96,12 @@ public class Manager : MonoBehaviour
     {
         if (_poolCell.Count > 0)
         {
-            Cell cell = _poolCell[0];
+            Cell cell = _poolCell[_poolCell.Count - 1];
             AddActiveCell(cell, position);
-            _poolCell.RemoveAt(0);
+            _poolCell.RemoveAt(_poolCell.Count - 1);
             return cell;
         }
         return null;
-    }
-    
-    public void ActiveCellTurn()
-    {
-        List<int> cellToDead = new List<int>();
-        
-        for (int i = 0; i < _activeCells.Count; i++)
-        {
-            if (!_activeCells[i].IsDead)
-            {
-                _activeCells[i].Action();
-            }
-            else
-            {
-                cellToDead.Add(i);
-            }
-        }
-        
-        for (int i = 0; i < cellToDead.Count; i++)
-        {
-            _activeCells.RemoveAt(cellToDead[i]-i);
-        }
     }
     
     private void NewLife()
@@ -121,15 +135,19 @@ public class Manager : MonoBehaviour
     public byte[] Mutation(byte[] gens)
     {
         byte[] childrenGen = new byte[world.maxGens];
-        
-        int mutateGen = Random.Range(0, world.maxGens);
 
         for (int i = 0; i < gens.Length; i++)
         {
             childrenGen[i] = gens[i];
         }
-        childrenGen[mutateGen] = (byte) Random.Range(0, 64);
         
+        if (Random.Range(0, 1f) <= world.chanceMutate)
+        {
+            int mutateGen = Random.Range(0, world.maxGens);
+
+            childrenGen[mutateGen] = (byte) Random.Range(0, 10);
+        }
+
         return childrenGen;
     }
     
@@ -142,7 +160,7 @@ public class Manager : MonoBehaviour
             var x = Random.Range(0, world.size);
             var y = Random.Range(0, world.size);
             position = new Vector2Int(x, y);
-        } while (cells[position.x, position.y] != null || cells[position.x, position.y]?.IsDead == true);
+        } while (cells[position.x, position.y] != null || cells[position.x, position.y]?.isDead == true);
 
         if (cells[position.x, position.y] != null)
         {
@@ -159,10 +177,8 @@ public class Manager : MonoBehaviour
         {
             return null;
         }
-        else
-        {
-            return cells[position.x, position.y];
-        }
+        
+        return cells[position.x, position.y];
     }
 
     public void AddActiveCell(Cell cell, Vector2Int position)
@@ -176,6 +192,17 @@ public class Manager : MonoBehaviour
         _activeCells.Remove(cell);
     }
     
+    public bool KillActiveCell(Cell cell)
+    {
+        int index = _activeCells.FindIndex(x => x == cell);
+        if (index != -1)
+        {
+            _activeCells[_activeCells.FindIndex(x => x == cell)] = null;
+            return true;
+        }
+
+        return false;
+    }
     public void RemoveCell(Vector2Int position)
     {
         if (cells[position.x, position.y] != null)
@@ -222,5 +249,26 @@ public class Manager : MonoBehaviour
         }
 
         return position;
+    }
+
+    public void ChangeColor()
+    {
+        switch (colorMod)
+        {
+            case ViewColor.GenColor:
+                colorMod = ViewColor.TypeColor;
+                break;
+            case ViewColor.TypeColor:
+                colorMod = ViewColor.GenColor;
+                break;
+        }
+
+        for (int i = 0; i < _activeCells.Count; i++)
+        {
+            if (_activeCells[i] != null)
+            {
+                _activeCells[i].DrawColor();
+            }
+        }
     }
 }
