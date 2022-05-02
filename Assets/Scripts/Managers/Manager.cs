@@ -6,8 +6,10 @@ using Random = UnityEngine.Random;
 public class Manager : MonoBehaviour
 {
     public static Manager Instance;
+    public UIManager UIManager;
     
     public World world;
+    public int carnivores, herbivorous, omnivorous;
     public Cell[,] cells;
     private List<Cell> _poolCell = new List<Cell>();
     private List<Cell> _activeCells = new List<Cell>();
@@ -43,13 +45,30 @@ public class Manager : MonoBehaviour
             yield return new WaitForSeconds(1f/2);
             
             List<int> cellToDead = new List<int>();
-        
+            
+            carnivores = 0;
+            herbivorous = 0;
+            omnivorous = 0;
             for (int i = 0; i < _activeCells.Count; i++)
             {
                 if (_activeCells[i] != null)
                 {
                     if (!_activeCells[i].isDead)
                     {
+                        // Расчёт количества
+                        switch (_activeCells[i].Type)
+                        {
+                            case World.PowerType.Carnivores:
+                                carnivores++;
+                                break;
+                            case World.PowerType.Herbivorous:
+                                herbivorous++;
+                                break;
+                            case World.PowerType.Omnivorous:
+                                omnivorous++;
+                                break;
+                        }
+                        
                         _activeCells[i].Action();
                     }
                     else
@@ -70,8 +89,10 @@ public class Manager : MonoBehaviour
 
             for (int i = 0; i < cellToDead.Count; i++)
             {
-                _activeCells.RemoveAt(cellToDead[i]-i);
+                _activeCells.RemoveAt(cellToDead[i] - i);
             }
+
+            UIManager.ChangeCount(carnivores, herbivorous, omnivorous);
         }
     }
 

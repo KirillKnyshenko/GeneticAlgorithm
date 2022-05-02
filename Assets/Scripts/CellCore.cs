@@ -52,7 +52,7 @@ public class CellCore
         
             EnergyConsumption(Manager.Instance.world.actionEnergy / 2);
         }
-        else
+        else 
         {
             if (GetEnergy() < Manager.Instance.world.actionEnergy) return;
 
@@ -87,8 +87,18 @@ public class CellCore
     
     protected bool Killing(Cell cellVictim)
     {
-        if (!IsSiblings(cellVictim) || GetEnergy() < (Manager.Instance.world.maxEnergy * 0.1f))
+        if (!IsSiblings(cellVictim) || GetEnergy() < (Manager.Instance.world.maxEnergy * 0.15f))
         {
+            if (cellVictim.type != World.PowerType.Herbivorous)
+            {
+                if (GetEnergy() < cellVictim.GetEnergy())
+                {
+                    Death();
+                    
+                    return false;
+                }
+            }
+            
             if (Manager.Instance.KillActiveCell(cellVictim))
             {
                 Manager.Instance.RemoveCell(cellVictim.Position);

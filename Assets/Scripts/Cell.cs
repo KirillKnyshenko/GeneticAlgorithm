@@ -72,21 +72,21 @@ public class Cell : CellCore
         visual.gameObject.SetActive(true);
 
         //Тип питания
-        if (gens[0] > 6)
+        if (gens[0] == 0)
+        {
+            type = World.PowerType.Omnivorous;
+            _typeColor = Color.blue;
+        }
+        else if (gens[0] == 1 || gens[0] == 2)
         {
             type = World.PowerType.Carnivores;
             _typeColor = Color.red;
         }
-        else 
+        else
         {
             type = World.PowerType.Herbivorous;
             _typeColor = Color.green;
         }
-        // else
-        // {
-        //     _type = World.PowerType.Omnivorous;
-        //     spriteRenderer.color = Color.blue;
-        // }
         
         CreateGenColor();
         DrawColor();
@@ -134,6 +134,7 @@ public class Cell : CellCore
             {
                 _rotation = Rotate();
             }
+            
         }
 
         #endregion
@@ -155,8 +156,7 @@ public class Cell : CellCore
             {
                 _rotation = Rotate();
             }
-
-            EnergyDistribution();
+            
         }
 
         #endregion
@@ -166,12 +166,13 @@ public class Cell : CellCore
         
         if (type == World.PowerType.Omnivorous)
         {
+            Division();
+            
             if (gens[_lastGen] == 1)
             {
                 Move();
             }
-            
-            if (gens[_lastGen] == 2)
+            else if (gens[_lastGen] == 2 && gens[_lastGen] == 5)
             {
                 _rotation = Rotate();
             }
@@ -179,6 +180,7 @@ public class Cell : CellCore
         
         #endregion
         
+        EnergyDistribution();
     }
 
     private void Move()
@@ -225,7 +227,7 @@ public class Cell : CellCore
         
             newPosition = Manager.Instance.CheckOfFrame(newPosition);
         
-            if (Manager.Instance.cells[newPosition.x, newPosition.y] == null || Manager.Instance.cells[newPosition.x, newPosition.y]?.isDead == true || Killing(Manager.Instance.cells[newPosition.x, newPosition.y]))
+            if (Manager.Instance.cells[newPosition.x, newPosition.y] == null || Manager.Instance.cells[newPosition.x, newPosition.y]?.isDead == true || (type != World.PowerType.Herbivorous && Killing(Manager.Instance.cells[newPosition.x, newPosition.y])))
             {
                 Manager.Instance.RemoveCell(newPosition);
                 Manager.Instance.CreateCell(newPosition, babyCost, gens);
@@ -308,7 +310,7 @@ public class Cell : CellCore
             }
 
             //Условие для атаки живой клетки
-           // if (gens[1] > 2)
+            if (gens[1] > 2)
             {
                 if (Killing(cellVictim))
                 {
