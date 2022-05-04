@@ -6,7 +6,11 @@ using Random = UnityEngine.Random;
 
 public class Cell : CellCore
 {
+    public int regenerationCount;
+    public bool isInWorld;
+    
     private Color _genColor, _typeColor, _energyColor;
+    public Color GenColor => _genColor;
     
     private byte _lastGen = 0;
 
@@ -25,10 +29,16 @@ public class Cell : CellCore
     {
         //Энергия
         SetEnergy(energy);
+
+        // Количетсво регенераций
+        regenerationCount++;
         
         //Клетка жива
         isDead = false;
 
+        //Находиться в мире
+        isInWorld = true;
+        
         //Возраст клетки 0
         YearsOld = 0;
 

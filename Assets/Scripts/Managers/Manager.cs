@@ -229,6 +229,7 @@ public class Manager : MonoBehaviour
         if (cells[position.x, position.y] != null)
         {
             cells[position.x, position.y].RemoveVisual();
+            cells[position.x, position.y].isInWorld = false;
             BackToPool(cells[position.x, position.y]);
             cells[position.x, position.y] = null;
         }
