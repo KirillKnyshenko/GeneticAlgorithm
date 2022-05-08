@@ -19,6 +19,7 @@ public class Manager : MonoBehaviour
     public ViewColor colorMod;
         
     [SerializeField] private GameObject _cell;
+    [SerializeField] private Transform _worldPlace;
     [SerializeField] private Transform _parentOfCell;
 
     public void Awake()
@@ -26,6 +27,8 @@ public class Manager : MonoBehaviour
         colorMod = ViewColor.GenColor;
         Instance = this;
         cells = new Cell[world.size, world.size];
+        _worldPlace.localScale = new Vector3(world.size, world.size, 0);
+        _worldPlace.position = new Vector3(world.size/2 - 0.5f, world.size/2 - 0.5f, 0);
         StartPool();
         StartCoroutine(Tick());
     }

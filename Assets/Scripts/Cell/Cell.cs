@@ -13,6 +13,7 @@ public class Cell : CellCore
     public Color GenColor => _genColor;
     
     private byte _lastGen = 0;
+    public byte CurrentGen => _lastGen;
 
     private bool _isAte;
 
@@ -104,17 +105,18 @@ public class Cell : CellCore
     
     public void Action()
     {
-        // Обнуление текущего гена, если он вышел за рамки
-        if (gens.Length <= _lastGen)
-        {
-            _lastGen = 0;
-        }
-
         // Проявление активности
         ActionVariant();
         
         // Переход к следующему гену
         _lastGen++;
+        
+        // Обнуление текущего гена, если он вышел за рамки
+        if (gens.Length <= _lastGen)
+        {
+            _lastGen = 0;
+        }
+        
         // Взросление клетки
         YearsOld++;
     }

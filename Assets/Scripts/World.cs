@@ -1,7 +1,7 @@
 using UnityEngine;
 
-[System.Serializable]
-public class World
+[CreateAssetMenu(fileName = "World", menuName = "Game/World Object", order = 1)]
+public class World : ScriptableObject
 {
     public int size;
     public int countOfBorn;

@@ -13,8 +13,8 @@ public class UIManager : MonoBehaviour
     
     [SerializeField] private TMP_Text _textcellColor;
     [SerializeField] private Image _cellColor;
-    [SerializeField] private TMP_Text _textCellType;
-    [SerializeField] private TMP_Text _textCellPosition;
+    [SerializeField] private TMP_Text _textInfo;
+    [SerializeField] private TMP_Text _textGen;
     public void ChangeColor()
     {
         Manager.Instance.ChangeColor();
@@ -46,18 +46,32 @@ public class UIManager : MonoBehaviour
 
     public void CellInfo()
     {
-        _textCellPosition.text = "";
-        _cellColor.color = Color.white;
         _textcellColor.text = "";
-        _textCellType.text = "";
+        _cellColor.color = Color.white;
+        _textInfo.text = "";
+        _textGen.text = "";
     }
     
     public void CellInfo(Cell cell)
     {
         _textcellColor.text = "Генетический цвет";
         _cellColor.color = cell.GenColor;
-        _textCellType.text = "Тип:\n" + cell.Type;
-        _textCellPosition.text = "Координаты:\n" + cell.Position;
+        _textInfo.text = "Тип:\n" + cell.Type + "\nКоординаты:\n" + cell.Position + "\nЭнергия:\n" + Mathf.RoundToInt(cell.GetEnergy()) + "\nВозраст:\n" + cell.YearsOld;
+        string gensText = "Гены:\n| ";
+        for (int i = 0; i < cell.gens.Length; i++)
+        {
+            if (i == 5)
+            {
+                gensText = gensText + "\n| ";
+            }
+            gensText = gensText + cell.gens[i] + " | ";
+        }
+
+        if (cell.gens != null)
+        {
+            gensText = gensText + "\nАктивный ген:\n" + cell.gens[cell.CurrentGen];
+        }
+
+        _textGen.text = gensText;
     }
 }
- 
