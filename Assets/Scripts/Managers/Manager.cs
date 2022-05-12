@@ -10,10 +10,12 @@ public class Manager : MonoBehaviour
     
     public World world;
     public int carnivores, herbivorous, omnivorous;
+    public int born, ticks;
     public Cell[,] cells;
+
     private List<Cell> _poolCell = new List<Cell>();
     private List<Cell> _activeCells = new List<Cell>();
-    
+
     public enum ViewColor {GenColor, TypeColor, EnergyColor}
 
     public ViewColor colorMod;
@@ -24,34 +26,52 @@ public class Manager : MonoBehaviour
 
     public void Awake()
     {
-        colorMod = ViewColor.GenColor;
         Instance = this;
-        cells = new Cell[world.size, world.size];
-        _worldPlace.localScale = new Vector3(world.size, world.size, 0);
-        _worldPlace.position = new Vector3(world.size/2 - 0.5f, world.size/2 - 0.5f, 0);
-        StartPool();
-        StartCoroutine(Tick());
+        colorMod = ViewColor.GenColor;
+        if (PlayerPrefs.HasKey("Key"))
+        {
+            SaveManager.Load();
+        }
+        else
+        {
+            WorldInit();
+        }
     }
 
     public void Update()
     {
         if (_activeCells.Count == 0)
         {
+            StopCoroutine(Tick());
             NewLife();
+            StartCoroutine(Tick());
         }
     }
 
-    private IEnumerator Tick()
+    public void WorldInit()
+    {
+        cells = new Cell[world.size, world.size];
+        _worldPlace.localScale = new Vector3(world.size, world.size, 0);
+        _worldPlace.position = new Vector3(world.size/2 - 0.5f, world.size/2 - 0.5f, 0);
+        StartPool();
+    }
+    
+    public IEnumerator Tick()
     {
         while (true)
         {
             yield return new WaitForSeconds(1f/2);
             
             List<int> cellToDead = new List<int>();
+
+            ticks++;
             
             carnivores = 0;
             herbivorous = 0;
             omnivorous = 0;
+
+            UIManager.TickUpdate(ticks, born);
+            
             for (int i = 0; i < _activeCells.Count; i++)
             {
                 if (_activeCells[i] != null)
@@ -84,12 +104,12 @@ public class Manager : MonoBehaviour
                     cellToDead.Add(i);
                 }
                 
-                if (i % 5000 == 0)
-                {
-                    yield return null;
-                }
+                // if (i % 5000 == 0)
+                // {
+                //     yield return null;
+                // }
             }
-
+            
             for (int i = 0; i < cellToDead.Count; i++)
             {
                 _activeCells.RemoveAt(cellToDead[i] - i);
@@ -128,10 +148,27 @@ public class Manager : MonoBehaviour
         return null;
     }
     
+    public void DeletePool()
+    {
+        if (_poolCell != null)
+        {
+            for (int i = 0; i < _poolCell.Count; i++)
+            {
+                if (_poolCell[i].visual != null)
+                {
+                    Destroy(_poolCell[i].visual.gameObject);
+                }
+            }
+        }
+    }
+    
     private void NewLife()
     {
+        born++;
+        
         if (!world.isBirthAfterDeath)
         {
+            ticks = 0;
             ClearWorld();
         }
         
@@ -240,14 +277,17 @@ public class Manager : MonoBehaviour
 
     public void ClearWorld()
     {
-        for (int i = 0; i < world.size; i++)
+        if (cells != null)
         {
-            for (int j = 0; j < world.size; j++)
+            for (int i = 0; i < world.size; i++)
             {
-                if (cells[i, j] != null)
+                for (int j = 0; j < world.size; j++)
                 {
-                    RemoveActiveCell(cells[i, j]);
-                    RemoveCell(cells[i, j].Position);
+                    if (cells[i, j] != null)
+                    {
+                        RemoveActiveCell(cells[i, j]);
+                        RemoveCell(cells[i, j].Position);
+                    }
                 }
             }
         }

@@ -10,6 +10,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] private TMP_Text _textCount;
     [SerializeField] private TMP_Text _textTimeScale;
     [SerializeField] private Slider _timeSlider;
+    [SerializeField] private TMP_Text _textTicks;
     
     [SerializeField] private TMP_Text _textcellColor;
     [SerializeField] private Image _cellColor;
@@ -44,6 +45,11 @@ public class UIManager : MonoBehaviour
         _textTimeScale.text = "Скорость тиков: " + Mathf.RoundToInt(_timeSlider.value * 100);
     }
 
+    public void TickUpdate(int tick, int borns)
+    {
+        _textTicks.text = "Тик:\n" + tick + "\nКоличество зарождений:\n" + borns;
+    }
+    
     public void CellInfo()
     {
         _textcellColor.text = "";

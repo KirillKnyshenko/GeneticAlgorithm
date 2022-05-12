@@ -1,0 +1,3561 @@
+{
+  "worldData": {
+    "size": 103,
+    "countOfBorn": 30,
+    "maxGens": 10,
+    "maxEnergy": 60.0,
+    "actionEnergy": 12.0,
+    "energyBoost": 1.0,
+    "relatedness": 30.0,
+    "yearsOldMax": 150,
+    "chanceMutate": 0.1,
+    "babyCost": 0.7,
+    "isBirthAfterDeath": false
+  },
+  "managerData": {
+    "born": 1,
+    "ticks": 334
+  },
+  "cells": [
+    {
+      "isDead": true,
+      "gens": "AAQJAgMCBAkDBA==",
+      "energy": 0.5999535,
+      "yearsOld": 62,
+      "position": {
+        "x": 3,
+        "y": 94,
+        "magnitude": 94.04786,
+        "sqrMagnitude": 8845
+      },
+      "lastGen": 2,
+      "isAte": false,
+      "rotation": {
+        "x": 0,
+        "y": 1,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1
+      }
+    },
+    {
+      "isDead": false,
+      "gens": "AAQJAgMCBAkDBA==",
+      "energy": 43.79988,
+      "yearsOld": 95,
+      "position": {
+        "x": 3,
+        "y": 95,
+        "magnitude": 95.0473557,
+        "sqrMagnitude": 9034
+      },
+      "lastGen": 5,
+      "isAte": false,
+      "rotation": {
+        "x": 1,
+        "y": 1,
+        "magnitude": 1.41421354,
+        "sqrMagnitude": 2
+      }
+    },
+    {
+      "isDead": true,
+      "gens": "AAQJAgMCBAkDBA==",
+      "energy": 3.0,
+      "yearsOld": 150,
+      "position": {
+        "x": 4,
+        "y": 93,
+        "magnitude": 93.08598,
+        "sqrMagnitude": 8665
+      },
+      "lastGen": 0,
+      "isAte": true,
+      "rotation": {
+        "x": -1,
+        "y": 1,
+        "magnitude": 1.41421354,
+        "sqrMagnitude": 2
+      }
+    },
+    {
+      "isDead": true,
+      "gens": "AwEAAAYJAQgHBg==",
+      "energy": 49.6000061,
+      "yearsOld": 150,
+      "position": {
+        "x": 6,
+        "y": 29,
+        "magnitude": 29.6141853,
+        "sqrMagnitude": 877
+      },
+      "lastGen": 0,
+      "isAte": false,
+      "rotation": {
+        "x": -1,
+        "y": 0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1
+      }
+    },
+    {
+      "isDead": true,
+      "gens": "BAUFBwADAAICCQ==",
+      "energy": 8.999887,
+      "yearsOld": 150,
+      "position": {
+        "x": 8,
+        "y": 79,
+        "magnitude": 79.40403,
+        "sqrMagnitude": 6305
+      },
+      "lastGen": 0,
+      "isAte": false,
+      "rotation": {
+        "x": 0,
+        "y": 1,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1
+      }
+    },
+    {
+      "isDead": false,
+      "gens": "BAUFBwADAAICCQ==",
+      "energy": 6.599943,
+      "yearsOld": 102,
+      "position": {
+        "x": 9,
+        "y": 71,
+        "magnitude": 71.5681458,
+        "sqrMagnitude": 5122
+      },
+      "lastGen": 2,
+      "isAte": false,
+      "rotation": {
+        "x": 1,
+        "y": -1,
+        "magnitude": 1.41421354,
+        "sqrMagnitude": 2
+      }
+    },
+    {
+      "isDead": true,
+      "gens": "BAEBBwMIAAEBCA==",
+      "energy": 54.0,
+      "yearsOld": 150,
+      "position": {
+        "x": 10,
+        "y": 4,
+        "magnitude": 10.7703295,
+        "sqrMagnitude": 116
+      },
+      "lastGen": 0,
+      "isAte": false,
+      "rotation": {
+        "x": 0,
+        "y": 1,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1
+      }
+    },
+    {
+      "isDead": false,
+      "gens": "BAUFBwADAAICCQ==",
+      "energy": 38.19998,
+      "yearsOld": 24,
+      "position": {
+        "x": 10,
+        "y": 72,
+        "magnitude": 72.691124,
+        "sqrMagnitude": 5284
+      },
+      "lastGen": 4,
+      "isAte": false,
+      "rotation": {
+        "x": 1,
+        "y": 0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1
+      }
+    },
+    {
+      "isDead": true,
+      "gens": "BwYGCQUHBQUDAQ==",
+      "energy": 58.2000046,
+      "yearsOld": 150,
+      "position": {
+        "x": 11,
+        "y": 3,
+        "magnitude": 11.4017544,
+        "sqrMagnitude": 130
+      },
+      "lastGen": 0,
+      "isAte": false,
+      "rotation": {
+        "x": -1,
+        "y": 1,
+        "magnitude": 1.41421354,
+        "sqrMagnitude": 2
+      }
+    },
+    {
+      "isDead": true,
+      "gens": "AgACBQABAwQJAw==",
+      "energy": 2.19999981,
+      "yearsOld": 150,
+      "position": {
+        "x": 12,
+        "y": 36,
+        "magnitude": 37.94733,
+        "sqrMagnitude": 1440
+      },
+      "lastGen": 0,
+      "isAte": false,
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "magnitude": 0.0,
+        "sqrMagnitude": 0
+      }
+    },
+    {
+      "isDead": true,
+      "gens": "CQkGBgUEAwICBQ==",
+      "energy": 11.9999895,
+      "yearsOld": 150,
+      "position": {
+        "x": 12,
+        "y": 51,
+        "magnitude": 52.392746,
+        "sqrMagnitude": 2745
+      },
+      "lastGen": 0,
+      "isAte": false,
+      "rotation": {
+        "x": 1,
+        "y": 1,
+        "magnitude": 1.41421354,
+        "sqrMagnitude": 2
+      }
+    },
+    {
+      "isDead": true,
+      "gens": "AgACBQABAwQJAw==",
+      "energy": 3.79999924,
+      "yearsOld": 150,
+      "position": {
+        "x": 13,
+        "y": 37,
+        "magnitude": 39.2173424,
+        "sqrMagnitude": 1538
+      },
+      "lastGen": 0,
+      "isAte": false,
+      "rotation": {
+        "x": 1,
+        "y": 0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1
+      }
+    },
+    {
+      "isDead": true,
+      "gens": "CQgHBAMEBgMIBg==",
+      "energy": 11.9999924,
+      "yearsOld": 150,
+      "position": {
+        "x": 14,
+        "y": 91,
+        "magnitude": 92.0706253,
+        "sqrMagnitude": 8477
+      },
+      "lastGen": 0,
+      "isAte": false,
+      "rotation": {
+        "x": -1,
+        "y": 1,
+        "magnitude": 1.41421354,
+        "sqrMagnitude": 2
+      }
+    },
+    {
+      "isDead": true,
+      "gens": "CQMCBAIGBwUHBw==",
+      "energy": 53.9998627,
+      "yearsOld": 150,
+      "position": {
+        "x": 16,
+        "y": 5,
+        "magnitude": 16.7630539,
+        "sqrMagnitude": 281
+      },
+      "lastGen": 0,
+      "isAte": false,
+      "rotation": {
+        "x": -1,
+        "y": -1,
+        "magnitude": 1.41421354,
+        "sqrMagnitude": 2
+      }
+    },
+    {
+      "isDead": true,
+      "gens": "BgEDBgcECQcJBg==",
+      "energy": 8.199999,
+      "yearsOld": 150,
+      "position": {
+        "x": 17,
+        "y": 17,
+        "magnitude": 24.04163,
+        "sqrMagnitude": 578
+      },
+      "lastGen": 0,
+      "isAte": false,
+      "rotation": {
+        "x": 1,
+        "y": 1,
+        "magnitude": 1.41421354,
+        "sqrMagnitude": 2
+      }
+    },
+    {
+      "isDead": true,
+      "gens": "AgkFBAUIBAIICQ==",
+      "energy": 2.39999866,
+      "yearsOld": 150,
+      "position": {
+        "x": 17,
+        "y": 66,
+        "magnitude": 68.1542358,
+        "sqrMagnitude": 4645
+      },
+      "lastGen": 0,
+      "isAte": false,
+      "rotation": {
+        "x": -1,
+        "y": 1,
+        "magnitude": 1.41421354,
+        "sqrMagnitude": 2
+      }
+    },
+    {
+      "isDead": true,
+      "gens": "BggCAQEHBQEIBg==",
+      "energy": 55.7,
+      "yearsOld": 150,
+      "position": {
+        "x": 17,
+        "y": 68,
+        "magnitude": 70.0928,
+        "sqrMagnitude": 4913
+      },
+      "lastGen": 0,
+      "isAte": false,
+      "rotation": {
+        "x": 1,
+        "y": 0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1
+      }
+    },
+    {
+      "isDead": true,
+      "gens": "AgkFBAUIBAIICQ==",
+      "energy": 0.0,
+      "yearsOld": 0,
+      "position": {
+        "x": 18,
+        "y": 66,
+        "magnitude": 68.41052,
+        "sqrMagnitude": 4680
+      },
+      "lastGen": 0,
+      "isAte": false,
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "magnitude": 0.0,
+        "sqrMagnitude": 0
+      }
+    },
+    {
+      "isDead": true,
+      "gens": "BggCAQEHBQEIBg==",
+      "energy": 55.7,
+      "yearsOld": 150,
+      "position": {
+        "x": 18,
+        "y": 68,
+        "magnitude": 70.34202,
+        "sqrMagnitude": 4948
+      },
+      "lastGen": 0,
+      "isAte": false,
+      "rotation": {
+        "x": 1,
+        "y": 1,
+        "magnitude": 1.41421354,
+        "sqrMagnitude": 2
+      }
+    },
+    {
+      "isDead": false,
+      "gens": "BggCAQEGBQEIBg==",
+      "energy": 40.79992,
+      "yearsOld": 138,
+      "position": {
+        "x": 18,
+        "y": 69,
+        "magnitude": 71.30919,
+        "sqrMagnitude": 5085
+      },
+      "lastGen": 8,
+      "isAte": false,
+      "rotation": {
+        "x": 0,
+        "y": 1,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1
+      }
+    },
+    {
+      "isDead": false,
+      "gens": "BggCAQEGBQEIBg==",
+      "energy": 17.599926,
+      "yearsOld": 86,
+      "position": {
+        "x": 18,
+        "y": 70,
+        "magnitude": 72.2772446,
+        "sqrMagnitude": 5224
+      },
+      "lastGen": 6,
+      "isAte": false,
+      "rotation": {
+        "x": 1,
+        "y": 0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1
+      }
+    },
+    {
+      "isDead": false,
+      "gens": "BggCAQEGBQEIBg==",
+      "energy": 46.39995,
+      "yearsOld": 34,
+      "position": {
+        "x": 18,
+        "y": 71,
+        "magnitude": 73.24616,
+        "sqrMagnitude": 5365
+      },
+      "lastGen": 4,
+      "isAte": false,
+      "rotation": {
+        "x": 1,
+        "y": 0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1
+      }
+    },
+    {
+      "isDead": false,
+      "gens": "CQMCBAIGBwUHBw==",
+      "energy": 42.7999725,
+      "yearsOld": 28,
+      "position": {
+        "x": 19,
+        "y": 19,
+        "magnitude": 26.8700581,
+        "sqrMagnitude": 722
+      },
+      "lastGen": 8,
+      "isAte": false,
+      "rotation": {
+        "x": -1,
+        "y": 0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1
+      }
+    },
+    {
+      "isDead": true,
+      "gens": "BggCAQEHBQEIBg==",
+      "energy": 55.7,
+      "yearsOld": 150,
+      "position": {
+        "x": 19,
+        "y": 66,
+        "magnitude": 68.68042,
+        "sqrMagnitude": 4717
+      },
+      "lastGen": 0,
+      "isAte": false,
+      "rotation": {
+        "x": 0,
+        "y": 1,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1
+      }
+    },
+    {
+      "isDead": true,
+      "gens": "BggCAQEHBQEIBg==",
+      "energy": 23.7000141,
+      "yearsOld": 150,
+      "position": {
+        "x": 19,
+        "y": 67,
+        "magnitude": 69.6419449,
+        "sqrMagnitude": 4850
+      },
+      "lastGen": 0,
+      "isAte": false,
+      "rotation": {
+        "x": 0,
+        "y": 1,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1
+      }
+    },
+    {
+      "isDead": false,
+      "gens": "BggCAQEHBQEFBg==",
+      "energy": 41.6000061,
+      "yearsOld": 8,
+      "position": {
+        "x": 20,
+        "y": 62,
+        "magnitude": 65.14599,
+        "sqrMagnitude": 4244
+      },
+      "lastGen": 8,
+      "isAte": false,
+      "rotation": {
+        "x": 0,
+        "y": -1,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1
+      }
+    },
+    {
+      "isDead": true,
+      "gens": "BggCAQEHBQEIBg==",
+      "energy": 55.7,
+      "yearsOld": 150,
+      "position": {
+        "x": 20,
+        "y": 65,
+        "magnitude": 68.0073547,
+        "sqrMagnitude": 4625
+      },
+      "lastGen": 0,
+      "isAte": false,
+      "rotation": {
+        "x": 1,
+        "y": 1,
+        "magnitude": 1.41421354,
+        "sqrMagnitude": 2
+      }
+    },
+    {
+      "isDead": true,
+      "gens": "BggCAQEHBQEIBg==",
+      "energy": 55.7,
+      "yearsOld": 150,
+      "position": {
+        "x": 20,
+        "y": 67,
+        "magnitude": 69.92139,
+        "sqrMagnitude": 4889
+      },
+      "lastGen": 0,
+      "isAte": false,
+      "rotation": {
+        "x": -1,
+        "y": 1,
+        "magnitude": 1.41421354,
+        "sqrMagnitude": 2
+      }
+    },
+    {
+      "isDead": false,
+      "gens": "BggCAQEHBQEFBg==",
+      "energy": 45.80001,
+      "yearsOld": 14,
+      "position": {
+        "x": 21,
+        "y": 61,
+        "magnitude": 64.5135651,
+        "sqrMagnitude": 4162
+      },
+      "lastGen": 4,
+      "isAte": false,
+      "rotation": {
+        "x": 1,
+        "y": -1,
+        "magnitude": 1.41421354,
+        "sqrMagnitude": 2
+      }
+    },
+    {
+      "isDead": false,
+      "gens": "BggCAQEHBQEFBg==",
+      "energy": 55.60004,
+      "yearsOld": 68,
+      "position": {
+        "x": 21,
+        "y": 62,
+        "magnitude": 65.4599152,
+        "sqrMagnitude": 4285
+      },
+      "lastGen": 8,
+      "isAte": false,
+      "rotation": {
+        "x": 0,
+        "y": 1,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1
+      }
+    },
+    {
+      "isDead": false,
+      "gens": "BggCAQEHBQEFBg==",
+      "energy": 15.5999994,
+      "yearsOld": 90,
+      "position": {
+        "x": 21,
+        "y": 63,
+        "magnitude": 66.40783,
+        "sqrMagnitude": 4410
+      },
+      "lastGen": 0,
+      "isAte": false,
+      "rotation": {
+        "x": -1,
+        "y": -1,
+        "magnitude": 1.41421354,
+        "sqrMagnitude": 2
+      }
+    },
+    {
+      "isDead": true,
+      "gens": "BggCAQEHBQEIBg==",
+      "energy": 53.700058,
+      "yearsOld": 150,
+      "position": {
+        "x": 21,
+        "y": 64,
+        "magnitude": 67.357254,
+        "sqrMagnitude": 4537
+      },
+      "lastGen": 0,
+      "isAte": false,
+      "rotation": {
+        "x": -1,
+        "y": 1,
+        "magnitude": 1.41421354,
+        "sqrMagnitude": 2
+      }
+    },
+    {
+      "isDead": true,
+      "gens": "BggCAQEHBQEIBg==",
+      "energy": 55.7,
+      "yearsOld": 150,
+      "position": {
+        "x": 21,
+        "y": 65,
+        "magnitude": 68.30813,
+        "sqrMagnitude": 4666
+      },
+      "lastGen": 0,
+      "isAte": false,
+      "rotation": {
+        "x": 1,
+        "y": -1,
+        "magnitude": 1.41421354,
+        "sqrMagnitude": 2
+      }
+    },
+    {
+      "isDead": false,
+      "gens": "CQMCBAIGBwUHBw==",
+      "energy": 21.1999245,
+      "yearsOld": 92,
+      "position": {
+        "x": 22,
+        "y": 20,
+        "magnitude": 29.7321377,
+        "sqrMagnitude": 884
+      },
+      "lastGen": 2,
+      "isAte": false,
+      "rotation": {
+        "x": 0,
+        "y": 1,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1
+      }
+    },
+    {
+      "isDead": false,
+      "gens": "BggCAQEHBQEFBg==",
+      "energy": 19.8000011,
+      "yearsOld": 46,
+      "position": {
+        "x": 22,
+        "y": 62,
+        "magnitude": 65.78754,
+        "sqrMagnitude": 4328
+      },
+      "lastGen": 6,
+      "isAte": false,
+      "rotation": {
+        "x": -1,
+        "y": 0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1
+      }
+    },
+    {
+      "isDead": false,
+      "gens": "BggCAQEHBQEFBg==",
+      "energy": 24.0000057,
+      "yearsOld": 112,
+      "position": {
+        "x": 22,
+        "y": 63,
+        "magnitude": 66.7308044,
+        "sqrMagnitude": 4453
+      },
+      "lastGen": 2,
+      "isAte": false,
+      "rotation": {
+        "x": 0,
+        "y": -1,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1
+      }
+    },
+    {
+      "isDead": false,
+      "gens": "BggCAQEHBQEFBg==",
+      "energy": 56.0000153,
+      "yearsOld": 20,
+      "position": {
+        "x": 23,
+        "y": 63,
+        "magnitude": 67.06713,
+        "sqrMagnitude": 4498
+      },
+      "lastGen": 0,
+      "isAte": false,
+      "rotation": {
+        "x": 1,
+        "y": -1,
+        "magnitude": 1.41421354,
+        "sqrMagnitude": 2
+      }
+    },
+    {
+      "isDead": true,
+      "gens": "CAgAAQkJBgYICQ==",
+      "energy": 0.0,
+      "yearsOld": 60,
+      "position": {
+        "x": 24,
+        "y": 40,
+        "magnitude": 46.6476135,
+        "sqrMagnitude": 2176
+      },
+      "lastGen": 0,
+      "isAte": false,
+      "rotation": {
+        "x": -1,
+        "y": 1,
+        "magnitude": 1.41421354,
+        "sqrMagnitude": 2
+      }
+    },
+    {
+      "isDead": true,
+      "gens": "CQMCBAIGBwUHBw==",
+      "energy": 53.9998627,
+      "yearsOld": 150,
+      "position": {
+        "x": 25,
+        "y": 6,
+        "magnitude": 25.70992,
+        "sqrMagnitude": 661
+      },
+      "lastGen": 0,
+      "isAte": false,
+      "rotation": {
+        "x": -1,
+        "y": -1,
+        "magnitude": 1.41421354,
+        "sqrMagnitude": 2
+      }
+    },
+    {
+      "isDead": true,
+      "gens": "AgQEAAYIAQUIBQ==",
+      "energy": 5.39999866,
+      "yearsOld": 150,
+      "position": {
+        "x": 26,
+        "y": 4,
+        "magnitude": 26.3058929,
+        "sqrMagnitude": 692
+      },
+      "lastGen": 0,
+      "isAte": false,
+      "rotation": {
+        "x": 1,
+        "y": 0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1
+      }
+    },
+    {
+      "isDead": false,
+      "gens": "BgQCBgQFAQMGCA==",
+      "energy": 43.0,
+      "yearsOld": 6,
+      "position": {
+        "x": 29,
+        "y": 73,
+        "magnitude": 78.54935,
+        "sqrMagnitude": 6170
+      },
+      "lastGen": 6,
+      "isAte": false,
+      "rotation": {
+        "x": -1,
+        "y": 1,
+        "magnitude": 1.41421354,
+        "sqrMagnitude": 2
+      }
+    },
+    {
+      "isDead": true,
+      "gens": "CAcJAwYFCQIJAg==",
+      "energy": 3.0,
+      "yearsOld": 150,
+      "position": {
+        "x": 30,
+        "y": 15,
+        "magnitude": 33.54102,
+        "sqrMagnitude": 1125
+      },
+      "lastGen": 0,
+      "isAte": false,
+      "rotation": {
+        "x": -1,
+        "y": -1,
+        "magnitude": 1.41421354,
+        "sqrMagnitude": 2
+      }
+    },
+    {
+      "isDead": false,
+      "gens": "BgQCBgQFAQMGCA==",
+      "energy": 12.0,
+      "yearsOld": 28,
+      "position": {
+        "x": 30,
+        "y": 72,
+        "magnitude": 78.0,
+        "sqrMagnitude": 6084
+      },
+      "lastGen": 8,
+      "isAte": false,
+      "rotation": {
+        "x": -1,
+        "y": 1,
+        "magnitude": 1.41421354,
+        "sqrMagnitude": 2
+      }
+    },
+    {
+      "isDead": false,
+      "gens": "BgQCBgYFAgMGCA==",
+      "energy": 44.5,
+      "yearsOld": 7,
+      "position": {
+        "x": 31,
+        "y": 68,
+        "magnitude": 74.73286,
+        "sqrMagnitude": 5585
+      },
+      "lastGen": 7,
+      "isAte": false,
+      "rotation": {
+        "x": -1,
+        "y": -1,
+        "magnitude": 1.41421354,
+        "sqrMagnitude": 2
+      }
+    },
+    {
+      "isDead": true,
+      "gens": "BgQCBgYFAgMGCA==",
+      "energy": 0.0,
+      "yearsOld": 20,
+      "position": {
+        "x": 31,
+        "y": 69,
+        "magnitude": 75.6439056,
+        "sqrMagnitude": 5722
+      },
+      "lastGen": 0,
+      "isAte": false,
+      "rotation": {
+        "x": 1,
+        "y": 1,
+        "magnitude": 1.41421354,
+        "sqrMagnitude": 2
+      }
+    },
+    {
+      "isDead": false,
+      "gens": "BgQCBgYFAQMGCA==",
+      "energy": 48.0,
+      "yearsOld": 72,
+      "position": {
+        "x": 31,
+        "y": 70,
+        "magnitude": 76.55717,
+        "sqrMagnitude": 5861
+      },
+      "lastGen": 2,
+      "isAte": false,
+      "rotation": {
+        "x": 1,
+        "y": 0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1
+      }
+    },
+    {
+      "isDead": false,
+      "gens": "BgQCBgYFAQMGCA==",
+      "energy": 27.0,
+      "yearsOld": 50,
+      "position": {
+        "x": 31,
+        "y": 71,
+        "magnitude": 77.47257,
+        "sqrMagnitude": 6002
+      },
+      "lastGen": 0,
+      "isAte": false,
+      "rotation": {
+        "x": -1,
+        "y": -1,
+        "magnitude": 1.41421354,
+        "sqrMagnitude": 2
+      }
+    },
+    {
+      "isDead": false,
+      "gens": "BgQCBgYFBQMGCA==",
+      "energy": 60.0,
+      "yearsOld": 26,
+      "position": {
+        "x": 31,
+        "y": 73,
+        "magnitude": 79.30952,
+        "sqrMagnitude": 6290
+      },
+      "lastGen": 6,
+      "isAte": false,
+      "rotation": {
+        "x": -1,
+        "y": -1,
+        "magnitude": 1.41421354,
+        "sqrMagnitude": 2
+      }
+    },
+    {
+      "isDead": true,
+      "gens": "BgQCBgYFAgMGCA==",
+      "energy": 0.0,
+      "yearsOld": 20,
+      "position": {
+        "x": 31,
+        "y": 74,
+        "magnitude": 80.23092,
+        "sqrMagnitude": 6437
+      },
+      "lastGen": 0,
+      "isAte": false,
+      "rotation": {
+        "x": 1,
+        "y": 0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1
+      }
+    },
+    {
+      "isDead": true,
+      "gens": "AgEHAwIHAgICAg==",
+      "energy": 0.0,
+      "yearsOld": 0,
+      "position": {
+        "x": 31,
+        "y": 81,
+        "magnitude": 86.72946,
+        "sqrMagnitude": 7522
+      },
+      "lastGen": 0,
+      "isAte": false,
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "magnitude": 0.0,
+        "sqrMagnitude": 0
+      }
+    },
+    {
+      "isDead": false,
+      "gens": "BgQCBgEFAQMGCA==",
+      "energy": 21.0,
+      "yearsOld": 38,
+      "position": {
+        "x": 32,
+        "y": 65,
+        "magnitude": 72.44998,
+        "sqrMagnitude": 5249
+      },
+      "lastGen": 8,
+      "isAte": false,
+      "rotation": {
+        "x": -1,
+        "y": 1,
+        "magnitude": 1.41421354,
+        "sqrMagnitude": 2
+      }
+    },
+    {
+      "isDead": false,
+      "gens": "BgQCBgYFAQMGCA==",
+      "energy": 46.0,
+      "yearsOld": 12,
+      "position": {
+        "x": 32,
+        "y": 68,
+        "magnitude": 75.1531754,
+        "sqrMagnitude": 5648
+      },
+      "lastGen": 2,
+      "isAte": false,
+      "rotation": {
+        "x": 0,
+        "y": -1,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1
+      }
+    },
+    {
+      "isDead": false,
+      "gens": "BgQCBgYFAQMGCA==",
+      "energy": 17.0,
+      "yearsOld": 104,
+      "position": {
+        "x": 32,
+        "y": 69,
+        "magnitude": 76.05919,
+        "sqrMagnitude": 5785
+      },
+      "lastGen": 4,
+      "isAte": false,
+      "rotation": {
+        "x": -1,
+        "y": -1,
+        "magnitude": 1.41421354,
+        "sqrMagnitude": 2
+      }
+    },
+    {
+      "isDead": false,
+      "gens": "BgQCBgYFAgMGCA==",
+      "energy": 25.5,
+      "yearsOld": 45,
+      "position": {
+        "x": 32,
+        "y": 70,
+        "magnitude": 76.96753,
+        "sqrMagnitude": 5924
+      },
+      "lastGen": 5,
+      "isAte": false,
+      "rotation": {
+        "x": -1,
+        "y": -1,
+        "magnitude": 1.41421354,
+        "sqrMagnitude": 2
+      }
+    },
+    {
+      "isDead": false,
+      "gens": "BgQCBgYFAQMACA==",
+      "energy": 60.0,
+      "yearsOld": 106,
+      "position": {
+        "x": 32,
+        "y": 71,
+        "magnitude": 77.87811,
+        "sqrMagnitude": 6065
+      },
+      "lastGen": 6,
+      "isAte": false,
+      "rotation": {
+        "x": 0,
+        "y": -1,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1
+      }
+    },
+    {
+      "isDead": false,
+      "gens": "BgQCBgYFAgMGCA==",
+      "energy": 54.0,
+      "yearsOld": 80,
+      "position": {
+        "x": 32,
+        "y": 72,
+        "magnitude": 78.79086,
+        "sqrMagnitude": 6208
+      },
+      "lastGen": 0,
+      "isAte": false,
+      "rotation": {
+        "x": -1,
+        "y": 1,
+        "magnitude": 1.41421354,
+        "sqrMagnitude": 2
+      }
+    },
+    {
+      "isDead": true,
+      "gens": "AgEHAwIHAgICAg==",
+      "energy": 2.39999866,
+      "yearsOld": 150,
+      "position": {
+        "x": 32,
+        "y": 81,
+        "magnitude": 87.0919,
+        "sqrMagnitude": 7585
+      },
+      "lastGen": 0,
+      "isAte": false,
+      "rotation": {
+        "x": -1,
+        "y": 0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1
+      }
+    },
+    {
+      "isDead": false,
+      "gens": "BgQCBgEFAQMGCA==",
+      "energy": 52.0,
+      "yearsOld": 16,
+      "position": {
+        "x": 33,
+        "y": 65,
+        "magnitude": 72.89719,
+        "sqrMagnitude": 5314
+      },
+      "lastGen": 6,
+      "isAte": false,
+      "rotation": {
+        "x": 1,
+        "y": -1,
+        "magnitude": 1.41421354,
+        "sqrMagnitude": 2
+      }
+    },
+    {
+      "isDead": false,
+      "gens": "BgQCBgYFAQMGCA==",
+      "energy": 36.0,
+      "yearsOld": 60,
+      "position": {
+        "x": 33,
+        "y": 66,
+        "magnitude": 73.7902451,
+        "sqrMagnitude": 5445
+      },
+      "lastGen": 0,
+      "isAte": false,
+      "rotation": {
+        "x": 1,
+        "y": 1,
+        "magnitude": 1.41421354,
+        "sqrMagnitude": 2
+      }
+    },
+    {
+      "isDead": false,
+      "gens": "BgQCBgYFAQMGCA==",
+      "energy": 57.0,
+      "yearsOld": 82,
+      "position": {
+        "x": 33,
+        "y": 67,
+        "magnitude": 74.68601,
+        "sqrMagnitude": 5578
+      },
+      "lastGen": 2,
+      "isAte": false,
+      "rotation": {
+        "x": -1,
+        "y": 0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1
+      }
+    },
+    {
+      "isDead": false,
+      "gens": "BgQCBgYFAQMGCA==",
+      "energy": 60.0,
+      "yearsOld": 34,
+      "position": {
+        "x": 33,
+        "y": 68,
+        "magnitude": 75.58439,
+        "sqrMagnitude": 5713
+      },
+      "lastGen": 4,
+      "isAte": false,
+      "rotation": {
+        "x": -1,
+        "y": 0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1
+      }
+    },
+    {
+      "isDead": false,
+      "gens": "BgQCBgYFAQMGCA==",
+      "energy": 38.0,
+      "yearsOld": 126,
+      "position": {
+        "x": 33,
+        "y": 69,
+        "magnitude": 76.48529,
+        "sqrMagnitude": 5850
+      },
+      "lastGen": 6,
+      "isAte": false,
+      "rotation": {
+        "x": 1,
+        "y": 1,
+        "magnitude": 1.41421354,
+        "sqrMagnitude": 2
+      }
+    },
+    {
+      "isDead": false,
+      "gens": "BgQCBgYFAgMGCA==",
+      "energy": 60.0,
+      "yearsOld": 134,
+      "position": {
+        "x": 33,
+        "y": 70,
+        "magnitude": 77.3886261,
+        "sqrMagnitude": 5989
+      },
+      "lastGen": 4,
+      "isAte": false,
+      "rotation": {
+        "x": 1,
+        "y": 1,
+        "magnitude": 1.41421354,
+        "sqrMagnitude": 2
+      }
+    },
+    {
+      "isDead": true,
+      "gens": "BgQCBgYFAgMGCA==",
+      "energy": 54.0,
+      "yearsOld": 150,
+      "position": {
+        "x": 33,
+        "y": 71,
+        "magnitude": 78.29432,
+        "sqrMagnitude": 6130
+      },
+      "lastGen": 0,
+      "isAte": false,
+      "rotation": {
+        "x": 1,
+        "y": 1,
+        "magnitude": 1.41421354,
+        "sqrMagnitude": 2
+      }
+    },
+    {
+      "isDead": false,
+      "gens": "BgQCBgYFAQMACA==",
+      "energy": 50.0,
+      "yearsOld": 138,
+      "position": {
+        "x": 33,
+        "y": 72,
+        "magnitude": 79.20227,
+        "sqrMagnitude": 6273
+      },
+      "lastGen": 8,
+      "isAte": false,
+      "rotation": {
+        "x": 0,
+        "y": 1,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1
+      }
+    },
+    {
+      "isDead": false,
+      "gens": "BgQCBgYFAQMACA==",
+      "energy": 57.0,
+      "yearsOld": 78,
+      "position": {
+        "x": 33,
+        "y": 73,
+        "magnitude": 80.11242,
+        "sqrMagnitude": 6418
+      },
+      "lastGen": 8,
+      "isAte": false,
+      "rotation": {
+        "x": -1,
+        "y": 0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1
+      }
+    },
+    {
+      "isDead": false,
+      "gens": "BgQCBgYFAQMACA==",
+      "energy": 49.0,
+      "yearsOld": 14,
+      "position": {
+        "x": 33,
+        "y": 74,
+        "magnitude": 81.02469,
+        "sqrMagnitude": 6565
+      },
+      "lastGen": 4,
+      "isAte": false,
+      "rotation": {
+        "x": -1,
+        "y": -1,
+        "magnitude": 1.41421354,
+        "sqrMagnitude": 2
+      }
+    },
+    {
+      "isDead": false,
+      "gens": "BgICBgYFAQMACA==",
+      "energy": 49.0,
+      "yearsOld": 14,
+      "position": {
+        "x": 34,
+        "y": 65,
+        "magnitude": 73.3553,
+        "sqrMagnitude": 5381
+      },
+      "lastGen": 4,
+      "isAte": false,
+      "rotation": {
+        "x": 1,
+        "y": 0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1
+      }
+    },
+    {
+      "isDead": false,
+      "gens": "BgICBgYFAQMACA==",
+      "energy": 18.5,
+      "yearsOld": 65,
+      "position": {
+        "x": 34,
+        "y": 66,
+        "magnitude": 74.24284,
+        "sqrMagnitude": 5512
+      },
+      "lastGen": 5,
+      "isAte": false,
+      "rotation": {
+        "x": 1,
+        "y": 0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1
+      }
+    },
+    {
+      "isDead": false,
+      "gens": "BgQCBgYFAQMGCA==",
+      "energy": 57.0,
+      "yearsOld": 142,
+      "position": {
+        "x": 34,
+        "y": 67,
+        "magnitude": 75.13322,
+        "sqrMagnitude": 5645
+      },
+      "lastGen": 2,
+      "isAte": false,
+      "rotation": {
+        "x": 0,
+        "y": 1,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1
+      }
+    },
+    {
+      "isDead": true,
+      "gens": "BgQCBgYFAQMGCA==",
+      "energy": 11.0,
+      "yearsOld": 150,
+      "position": {
+        "x": 34,
+        "y": 68,
+        "magnitude": 76.02631,
+        "sqrMagnitude": 5780
+      },
+      "lastGen": 0,
+      "isAte": false,
+      "rotation": {
+        "x": -1,
+        "y": -1,
+        "magnitude": 1.41421354,
+        "sqrMagnitude": 2
+      }
+    },
+    {
+      "isDead": false,
+      "gens": "BgQCBgYFAQMGCA==",
+      "energy": 60.0,
+      "yearsOld": 58,
+      "position": {
+        "x": 34,
+        "y": 69,
+        "magnitude": 76.9220352,
+        "sqrMagnitude": 5917
+      },
+      "lastGen": 8,
+      "isAte": false,
+      "rotation": {
+        "x": 1,
+        "y": -1,
+        "magnitude": 1.41421354,
+        "sqrMagnitude": 2
+      }
+    },
+    {
+      "isDead": true,
+      "gens": "BgQCBgYFAgMGCA==",
+      "energy": 42.5,
+      "yearsOld": 150,
+      "position": {
+        "x": 34,
+        "y": 70,
+        "magnitude": 77.8203049,
+        "sqrMagnitude": 6056
+      },
+      "lastGen": 0,
+      "isAte": false,
+      "rotation": {
+        "x": 0,
+        "y": 1,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1
+      }
+    },
+    {
+      "isDead": false,
+      "gens": "BgQCBgIFAgMGCA==",
+      "energy": 38.5,
+      "yearsOld": 3,
+      "position": {
+        "x": 34,
+        "y": 71,
+        "magnitude": 78.72102,
+        "sqrMagnitude": 6197
+      },
+      "lastGen": 3,
+      "isAte": false,
+      "rotation": {
+        "x": 0,
+        "y": 1,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1
+      }
+    },
+    {
+      "isDead": false,
+      "gens": "BgQCBgYFAgMGCA==",
+      "energy": 55.0,
+      "yearsOld": 18,
+      "position": {
+        "x": 34,
+        "y": 72,
+        "magnitude": 79.624115,
+        "sqrMagnitude": 6340
+      },
+      "lastGen": 8,
+      "isAte": false,
+      "rotation": {
+        "x": -1,
+        "y": 1,
+        "magnitude": 1.41421354,
+        "sqrMagnitude": 2
+      }
+    },
+    {
+      "isDead": false,
+      "gens": "BgQCBgYFAQMACA==",
+      "energy": 20.0,
+      "yearsOld": 46,
+      "position": {
+        "x": 34,
+        "y": 73,
+        "magnitude": 80.5294952,
+        "sqrMagnitude": 6485
+      },
+      "lastGen": 6,
+      "isAte": false,
+      "rotation": {
+        "x": 0,
+        "y": -1,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1
+      }
+    },
+    {
+      "isDead": false,
+      "gens": "BgQCBgYFAQMACA==",
+      "energy": 36.0,
+      "yearsOld": 56,
+      "position": {
+        "x": 34,
+        "y": 74,
+        "magnitude": 81.4370956,
+        "sqrMagnitude": 6632
+      },
+      "lastGen": 6,
+      "isAte": false,
+      "rotation": {
+        "x": 1,
+        "y": 1,
+        "magnitude": 1.41421354,
+        "sqrMagnitude": 2
+      }
+    },
+    {
+      "isDead": false,
+      "gens": "BgQCBgYFAQMACA==",
+      "energy": 37.0,
+      "yearsOld": 2,
+      "position": {
+        "x": 34,
+        "y": 75,
+        "magnitude": 82.3468246,
+        "sqrMagnitude": 6781
+      },
+      "lastGen": 2,
+      "isAte": false,
+      "rotation": {
+        "x": 1,
+        "y": -1,
+        "magnitude": 1.41421354,
+        "sqrMagnitude": 2
+      }
+    },
+    {
+      "isDead": false,
+      "gens": "BgUCBgAFAQMGCA==",
+      "energy": 55.0,
+      "yearsOld": 22,
+      "position": {
+        "x": 35,
+        "y": 63,
+        "magnitude": 72.06941,
+        "sqrMagnitude": 5194
+      },
+      "lastGen": 2,
+      "isAte": false,
+      "rotation": {
+        "x": 1,
+        "y": -1,
+        "magnitude": 1.41421354,
+        "sqrMagnitude": 2
+      }
+    },
+    {
+      "isDead": false,
+      "gens": "BgQCBgYFAQMGCA==",
+      "energy": 52.0,
+      "yearsOld": 16,
+      "position": {
+        "x": 35,
+        "y": 64,
+        "magnitude": 72.94518,
+        "sqrMagnitude": 5321
+      },
+      "lastGen": 6,
+      "isAte": false,
+      "rotation": {
+        "x": 1,
+        "y": 0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1
+      }
+    },
+    {
+      "isDead": false,
+      "gens": "BgQCBgYFAQMGCA==",
+      "energy": 21.0,
+      "yearsOld": 38,
+      "position": {
+        "x": 35,
+        "y": 65,
+        "magnitude": 73.82411,
+        "sqrMagnitude": 5450
+      },
+      "lastGen": 8,
+      "isAte": false,
+      "rotation": {
+        "x": -1,
+        "y": 0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1
+      }
+    },
+    {
+      "isDead": false,
+      "gens": "BgQCBgYFAQMGCA==",
+      "energy": 38.0,
+      "yearsOld": 120,
+      "position": {
+        "x": 35,
+        "y": 66,
+        "magnitude": 74.70609,
+        "sqrMagnitude": 5581
+      },
+      "lastGen": 0,
+      "isAte": false,
+      "rotation": {
+        "x": 0,
+        "y": -1,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1
+      }
+    },
+    {
+      "isDead": false,
+      "gens": "BgICBgYFAQMACA==",
+      "energy": 60.0,
+      "yearsOld": 106,
+      "position": {
+        "x": 35,
+        "y": 67,
+        "magnitude": 75.591,
+        "sqrMagnitude": 5714
+      },
+      "lastGen": 6,
+      "isAte": false,
+      "rotation": {
+        "x": 0,
+        "y": 1,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1
+      }
+    },
+    {
+      "isDead": false,
+      "gens": "BgQCBgYFAQMGCA==",
+      "energy": 55.0,
+      "yearsOld": 22,
+      "position": {
+        "x": 35,
+        "y": 68,
+        "magnitude": 76.47875,
+        "sqrMagnitude": 5849
+      },
+      "lastGen": 2,
+      "isAte": false,
+      "rotation": {
+        "x": -1,
+        "y": 1,
+        "magnitude": 1.41421354,
+        "sqrMagnitude": 2
+      }
+    },
+    {
+      "isDead": false,
+      "gens": "BgQCBgYFAQMACA==",
+      "energy": 60.0,
+      "yearsOld": 46,
+      "position": {
+        "x": 35,
+        "y": 69,
+        "magnitude": 77.36925,
+        "sqrMagnitude": 5986
+      },
+      "lastGen": 6,
+      "isAte": false,
+      "rotation": {
+        "x": 0,
+        "y": 1,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1
+      }
+    },
+    {
+      "isDead": false,
+      "gens": "BgQCBgYFAQMACA==",
+      "energy": 50.0,
+      "yearsOld": 138,
+      "position": {
+        "x": 35,
+        "y": 70,
+        "magnitude": 78.26238,
+        "sqrMagnitude": 6125
+      },
+      "lastGen": 8,
+      "isAte": false,
+      "rotation": {
+        "x": 1,
+        "y": 0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1
+      }
+    },
+    {
+      "isDead": false,
+      "gens": "BgQCBgYFAQMACA==",
+      "energy": 60.0,
+      "yearsOld": 88,
+      "position": {
+        "x": 35,
+        "y": 71,
+        "magnitude": 79.15807,
+        "sqrMagnitude": 6266
+      },
+      "lastGen": 8,
+      "isAte": false,
+      "rotation": {
+        "x": -1,
+        "y": 1,
+        "magnitude": 1.41421354,
+        "sqrMagnitude": 2
+      }
+    },
+    {
+      "isDead": false,
+      "gens": "BgQCBgIFAgMGCA==",
+      "energy": 12.0,
+      "yearsOld": 28,
+      "position": {
+        "x": 35,
+        "y": 72,
+        "magnitude": 80.05623,
+        "sqrMagnitude": 6409
+      },
+      "lastGen": 8,
+      "isAte": false,
+      "rotation": {
+        "x": -1,
+        "y": -1,
+        "magnitude": 1.41421354,
+        "sqrMagnitude": 2
+      }
+    },
+    {
+      "isDead": true,
+      "gens": "BgQCBgYFAgMGCA==",
+      "energy": 0.0,
+      "yearsOld": 20,
+      "position": {
+        "x": 35,
+        "y": 73,
+        "magnitude": 80.95678,
+        "sqrMagnitude": 6554
+      },
+      "lastGen": 0,
+      "isAte": false,
+      "rotation": {
+        "x": -1,
+        "y": 0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1
+      }
+    },
+    {
+      "isDead": false,
+      "gens": "BgQCBgYFAQMACA==",
+      "energy": 8.0,
+      "yearsOld": 34,
+      "position": {
+        "x": 35,
+        "y": 74,
+        "magnitude": 81.8596344,
+        "sqrMagnitude": 6701
+      },
+      "lastGen": 4,
+      "isAte": false,
+      "rotation": {
+        "x": -1,
+        "y": 1,
+        "magnitude": 1.41421354,
+        "sqrMagnitude": 2
+      }
+    },
+    {
+      "isDead": false,
+      "gens": "BgQCBgYFAQMACA==",
+      "energy": 49.0,
+      "yearsOld": 14,
+      "position": {
+        "x": 35,
+        "y": 75,
+        "magnitude": 82.7647247,
+        "sqrMagnitude": 6850
+      },
+      "lastGen": 4,
+      "isAte": false,
+      "rotation": {
+        "x": -1,
+        "y": 1,
+        "magnitude": 1.41421354,
+        "sqrMagnitude": 2
+      }
+    },
+    {
+      "isDead": true,
+      "gens": "CQMCBAIGBwUHBw==",
+      "energy": 53.9998627,
+      "yearsOld": 150,
+      "position": {
+        "x": 36,
+        "y": 19,
+        "magnitude": 40.7062645,
+        "sqrMagnitude": 1657
+      },
+      "lastGen": 0,
+      "isAte": false,
+      "rotation": {
+        "x": 1,
+        "y": 0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1
+      }
+    },
+    {
+      "isDead": false,
+      "gens": "BgUCBgAFAQMGCA==",
+      "energy": 24.0,
+      "yearsOld": 44,
+      "position": {
+        "x": 36,
+        "y": 63,
+        "magnitude": 72.56032,
+        "sqrMagnitude": 5265
+      },
+      "lastGen": 4,
+      "isAte": false,
+      "rotation": {
+        "x": -1,
+        "y": 0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1
+      }
+    },
+    {
+      "isDead": false,
+      "gens": "BgUCBgYFAQMGCA==",
+      "energy": 60.0,
+      "yearsOld": 98,
+      "position": {
+        "x": 36,
+        "y": 65,
+        "magnitude": 74.30343,
+        "sqrMagnitude": 5521
+      },
+      "lastGen": 8,
+      "isAte": false,
+      "rotation": {
+        "x": -1,
+        "y": -1,
+        "magnitude": 1.41421354,
+        "sqrMagnitude": 2
+      }
+    },
+    {
+      "isDead": false,
+      "gens": "BgICBgYFAQMECA==",
+      "energy": 48.0,
+      "yearsOld": 72,
+      "position": {
+        "x": 36,
+        "y": 67,
+        "magnitude": 76.05919,
+        "sqrMagnitude": 5785
+      },
+      "lastGen": 2,
+      "isAte": false,
+      "rotation": {
+        "x": 1,
+        "y": 0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1
+      }
+    },
+    {
+      "isDead": false,
+      "gens": "BgICBgYFAQMACA==",
+      "energy": 60.0,
+      "yearsOld": 137,
+      "position": {
+        "x": 36,
+        "y": 68,
+        "magnitude": 76.9415359,
+        "sqrMagnitude": 5920
+      },
+      "lastGen": 7,
+      "isAte": false,
+      "rotation": {
+        "x": 0,
+        "y": -1,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1
+      }
+    },
+    {
+      "isDead": false,
+      "gens": "BgICBgYFAQMECA==",
+      "energy": 60.0,
+      "yearsOld": 64,
+      "position": {
+        "x": 36,
+        "y": 69,
+        "magnitude": 77.82673,
+        "sqrMagnitude": 6057
+      },
+      "lastGen": 4,
+      "isAte": false,
+      "rotation": {
+        "x": -1,
+        "y": 0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1
+      }
+    },
+    {
+      "isDead": true,
+      "gens": "BgQCBgYFAQMACA==",
+      "energy": 54.0,
+      "yearsOld": 150,
+      "position": {
+        "x": 36,
+        "y": 70,
+        "magnitude": 78.7146759,
+        "sqrMagnitude": 6196
+      },
+      "lastGen": 0,
+      "isAte": true,
+      "rotation": {
+        "x": 1,
+        "y": -1,
+        "magnitude": 1.41421354,
+        "sqrMagnitude": 2
+      }
+    },
+    {
+      "isDead": false,
+      "gens": "BgQCBgYFAgMGCA==",
+      "energy": 60.0,
+      "yearsOld": 94,
+      "position": {
+        "x": 36,
+        "y": 71,
+        "magnitude": 79.60528,
+        "sqrMagnitude": 6337
+      },
+      "lastGen": 4,
+      "isAte": false,
+      "rotation": {
+        "x": -1,
+        "y": 1,
+        "magnitude": 1.41421354,
+        "sqrMagnitude": 2
+      }
+    },
+    {
+      "isDead": false,
+      "gens": "BgQCBgYFAgMGCA==",
+      "energy": 20.0,
+      "yearsOld": 126,
+      "position": {
+        "x": 36,
+        "y": 72,
+        "magnitude": 80.49844,
+        "sqrMagnitude": 6480
+      },
+      "lastGen": 6,
+      "isAte": false,
+      "rotation": {
+        "x": 1,
+        "y": 0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1
+      }
+    },
+    {
+      "isDead": false,
+      "gens": "BgQCBgYFAQMACA==",
+      "energy": 54.0,
+      "yearsOld": 100,
+      "position": {
+        "x": 36,
+        "y": 73,
+        "magnitude": 81.394104,
+        "sqrMagnitude": 6625
+      },
+      "lastGen": 0,
+      "isAte": false,
+      "rotation": {
+        "x": 1,
+        "y": 0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1
+      }
+    },
+    {
+      "isDead": false,
+      "gens": "BgQCBgYFAQMACA==",
+      "energy": 18.0,
+      "yearsOld": 36,
+      "position": {
+        "x": 36,
+        "y": 75,
+        "magnitude": 83.19255,
+        "sqrMagnitude": 6921
+      },
+      "lastGen": 6,
+      "isAte": false,
+      "rotation": {
+        "x": -1,
+        "y": 0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1
+      }
+    },
+    {
+      "isDead": false,
+      "gens": "BgUCBgYFAQMGCA==",
+      "energy": 45.0,
+      "yearsOld": 66,
+      "position": {
+        "x": 37,
+        "y": 64,
+        "magnitude": 73.92564,
+        "sqrMagnitude": 5465
+      },
+      "lastGen": 6,
+      "isAte": false,
+      "rotation": {
+        "x": 1,
+        "y": 0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1
+      }
+    },
+    {
+      "isDead": false,
+      "gens": "BgICBgYFAQMECA==",
+      "energy": 6.5,
+      "yearsOld": 103,
+      "position": {
+        "x": 37,
+        "y": 66,
+        "magnitude": 75.66373,
+        "sqrMagnitude": 5725
+      },
+      "lastGen": 3,
+      "isAte": false,
+      "rotation": {
+        "x": 1,
+        "y": 0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1
+      }
+    },
+    {
+      "isDead": false,
+      "gens": "BgICBgYFAQMECA==",
+      "energy": 21.5,
+      "yearsOld": 51,
+      "position": {
+        "x": 37,
+        "y": 67,
+        "magnitude": 76.5375748,
+        "sqrMagnitude": 5858
+      },
+      "lastGen": 1,
+      "isAte": false,
+      "rotation": {
+        "x": 1,
+        "y": -1,
+        "magnitude": 1.41421354,
+        "sqrMagnitude": 2
+      }
+    },
+    {
+      "isDead": false,
+      "gens": "BgICBgYFAQMECA==",
+      "energy": 4.5,
+      "yearsOld": 23,
+      "position": {
+        "x": 37,
+        "y": 68,
+        "magnitude": 77.41447,
+        "sqrMagnitude": 5993
+      },
+      "lastGen": 3,
+      "isAte": false,
+      "rotation": {
+        "x": 0,
+        "y": 1,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1
+      }
+    },
+    {
+      "isDead": false,
+      "gens": "BgICBgYFAQMECA==",
+      "energy": 37.0,
+      "yearsOld": 2,
+      "position": {
+        "x": 37,
+        "y": 69,
+        "magnitude": 78.29432,
+        "sqrMagnitude": 6130
+      },
+      "lastGen": 2,
+      "isAte": false,
+      "rotation": {
+        "x": 0,
+        "y": -1,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1
+      }
+    },
+    {
+      "isDead": false,
+      "gens": "BgICBgYFAQMECA==",
+      "energy": 60.0,
+      "yearsOld": 85,
+      "position": {
+        "x": 37,
+        "y": 70,
+        "magnitude": 79.17702,
+        "sqrMagnitude": 6269
+      },
+      "lastGen": 5,
+      "isAte": false,
+      "rotation": {
+        "x": 1,
+        "y": 0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1
+      }
+    },
+    {
+      "isDead": false,
+      "gens": "BgQCBgYFAQMACA==",
+      "energy": 60.0,
+      "yearsOld": 148,
+      "position": {
+        "x": 37,
+        "y": 71,
+        "magnitude": 80.06248,
+        "sqrMagnitude": 6410
+      },
+      "lastGen": 8,
+      "isAte": false,
+      "rotation": {
+        "x": -1,
+        "y": 0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1
+      }
+    },
+    {
+      "isDead": false,
+      "gens": "BgQCBgYFAQMACA==",
+      "energy": 47.0,
+      "yearsOld": 126,
+      "position": {
+        "x": 37,
+        "y": 72,
+        "magnitude": 80.9506,
+        "sqrMagnitude": 6553
+      },
+      "lastGen": 6,
+      "isAte": false,
+      "rotation": {
+        "x": 0,
+        "y": 1,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1
+      }
+    },
+    {
+      "isDead": false,
+      "gens": "BgQCBgYFAQMACA==",
+      "energy": 60.0,
+      "yearsOld": 44,
+      "position": {
+        "x": 37,
+        "y": 73,
+        "magnitude": 81.84131,
+        "sqrMagnitude": 6698
+      },
+      "lastGen": 4,
+      "isAte": false,
+      "rotation": {
+        "x": 1,
+        "y": 0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1
+      }
+    },
+    {
+      "isDead": false,
+      "gens": "BgQCBgYFAQMACA==",
+      "energy": 41.0,
+      "yearsOld": 68,
+      "position": {
+        "x": 37,
+        "y": 74,
+        "magnitude": 82.73451,
+        "sqrMagnitude": 6845
+      },
+      "lastGen": 8,
+      "isAte": false,
+      "rotation": {
+        "x": 0,
+        "y": -1,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1
+      }
+    },
+    {
+      "isDead": false,
+      "gens": "BgIJBgYFAQMECA==",
+      "energy": 37.0,
+      "yearsOld": 2,
+      "position": {
+        "x": 38,
+        "y": 66,
+        "magnitude": 76.15773,
+        "sqrMagnitude": 5800
+      },
+      "lastGen": 2,
+      "isAte": false,
+      "rotation": {
+        "x": 1,
+        "y": -1,
+        "magnitude": 1.41421354,
+        "sqrMagnitude": 2
+      }
+    },
+    {
+      "isDead": false,
+      "gens": "BgICBgYFAQMECA==",
+      "energy": 26.0,
+      "yearsOld": 124,
+      "position": {
+        "x": 38,
+        "y": 67,
+        "magnitude": 77.02597,
+        "sqrMagnitude": 5933
+      },
+      "lastGen": 4,
+      "isAte": false,
+      "rotation": {
+        "x": 1,
+        "y": 1,
+        "magnitude": 1.41421354,
+        "sqrMagnitude": 2
+      }
+    },
+    {
+      "isDead": false,
+      "gens": "BgICBgYFAQMECA==",
+      "energy": 52.0,
+      "yearsOld": 20,
+      "position": {
+        "x": 38,
+        "y": 68,
+        "magnitude": 77.89737,
+        "sqrMagnitude": 6068
+      },
+      "lastGen": 0,
+      "isAte": false,
+      "rotation": {
+        "x": 1,
+        "y": 0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1
+      }
+    },
+    {
+      "isDead": false,
+      "gens": "BgQCBgYFAQMACA==",
+      "energy": 46.0,
+      "yearsOld": 12,
+      "position": {
+        "x": 38,
+        "y": 69,
+        "magnitude": 78.77182,
+        "sqrMagnitude": 6205
+      },
+      "lastGen": 2,
+      "isAte": false,
+      "rotation": {
+        "x": -1,
+        "y": -1,
+        "magnitude": 1.41421354,
+        "sqrMagnitude": 2
+      }
+    },
+    {
+      "isDead": false,
+      "gens": "BgQCBgYFAQMACA==",
+      "energy": 17.0,
+      "yearsOld": 44,
+      "position": {
+        "x": 38,
+        "y": 70,
+        "magnitude": 79.64923,
+        "sqrMagnitude": 6344
+      },
+      "lastGen": 4,
+      "isAte": false,
+      "rotation": {
+        "x": 1,
+        "y": 0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1
+      }
+    },
+    {
+      "isDead": false,
+      "gens": "BgQCBgYFAQMACA==",
+      "energy": 45.0,
+      "yearsOld": 66,
+      "position": {
+        "x": 38,
+        "y": 71,
+        "magnitude": 80.5294952,
+        "sqrMagnitude": 6485
+      },
+      "lastGen": 6,
+      "isAte": false,
+      "rotation": {
+        "x": -1,
+        "y": 1,
+        "magnitude": 1.41421354,
+        "sqrMagnitude": 2
+      }
+    },
+    {
+      "isDead": false,
+      "gens": "BgICBgYFAQMECA==",
+      "energy": 58.5,
+      "yearsOld": 33,
+      "position": {
+        "x": 38,
+        "y": 72,
+        "magnitude": 81.41253,
+        "sqrMagnitude": 6628
+      },
+      "lastGen": 3,
+      "isAte": false,
+      "rotation": {
+        "x": 0,
+        "y": -1,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1
+      }
+    },
+    {
+      "isDead": false,
+      "gens": "BgQCBgYFAQMACA==",
+      "energy": 60.0,
+      "yearsOld": 104,
+      "position": {
+        "x": 38,
+        "y": 73,
+        "magnitude": 82.29824,
+        "sqrMagnitude": 6773
+      },
+      "lastGen": 4,
+      "isAte": false,
+      "rotation": {
+        "x": 1,
+        "y": -1,
+        "magnitude": 1.41421354,
+        "sqrMagnitude": 2
+      }
+    },
+    {
+      "isDead": false,
+      "gens": "BgQCBgYFAQMACA==",
+      "energy": 57.0,
+      "yearsOld": 82,
+      "position": {
+        "x": 38,
+        "y": 74,
+        "magnitude": 83.18654,
+        "sqrMagnitude": 6920
+      },
+      "lastGen": 2,
+      "isAte": false,
+      "rotation": {
+        "x": 1,
+        "y": -1,
+        "magnitude": 1.41421354,
+        "sqrMagnitude": 2
+      }
+    },
+    {
+      "isDead": false,
+      "gens": "BAUDBwUFBgQBAg==",
+      "energy": 60.0,
+      "yearsOld": 91,
+      "position": {
+        "x": 38,
+        "y": 91,
+        "magnitude": 98.61542,
+        "sqrMagnitude": 9725
+      },
+      "lastGen": 1,
+      "isAte": false,
+      "rotation": {
+        "x": 1,
+        "y": 0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1
+      }
+    },
+    {
+      "isDead": true,
+      "gens": "CQMCBAIGBwUHBw==",
+      "energy": 53.9998627,
+      "yearsOld": 150,
+      "position": {
+        "x": 39,
+        "y": 18,
+        "magnitude": 42.9534645,
+        "sqrMagnitude": 1845
+      },
+      "lastGen": 0,
+      "isAte": false,
+      "rotation": {
+        "x": 0,
+        "y": 1,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1
+      }
+    },
+    {
+      "isDead": false,
+      "gens": "BAAJBgIGAQMHBg==",
+      "energy": 21.1999416,
+      "yearsOld": 92,
+      "position": {
+        "x": 39,
+        "y": 60,
+        "magnitude": 71.5611649,
+        "sqrMagnitude": 5121
+      },
+      "lastGen": 2,
+      "isAte": false,
+      "rotation": {
+        "x": -1,
+        "y": 0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1
+      }
+    },
+    {
+      "isDead": false,
+      "gens": "BgICBgYFAQMECA==",
+      "energy": 60.0,
+      "yearsOld": 145,
+      "position": {
+        "x": 39,
+        "y": 68,
+        "magnitude": 78.39005,
+        "sqrMagnitude": 6145
+      },
+      "lastGen": 5,
+      "isAte": false,
+      "rotation": {
+        "x": -1,
+        "y": -1,
+        "magnitude": 1.41421354,
+        "sqrMagnitude": 2
+      }
+    },
+    {
+      "isDead": false,
+      "gens": "BgICBgYFAQMECA==",
+      "energy": 58.5,
+      "yearsOld": 33,
+      "position": {
+        "x": 39,
+        "y": 69,
+        "magnitude": 79.25907,
+        "sqrMagnitude": 6282
+      },
+      "lastGen": 3,
+      "isAte": false,
+      "rotation": {
+        "x": -1,
+        "y": -1,
+        "magnitude": 1.41421354,
+        "sqrMagnitude": 2
+      }
+    },
+    {
+      "isDead": false,
+      "gens": "BgICBgYFAQMECA==",
+      "energy": 60.0,
+      "yearsOld": 106,
+      "position": {
+        "x": 39,
+        "y": 70,
+        "magnitude": 80.13114,
+        "sqrMagnitude": 6421
+      },
+      "lastGen": 6,
+      "isAte": false,
+      "rotation": {
+        "x": 0,
+        "y": 1,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1
+      }
+    },
+    {
+      "isDead": false,
+      "gens": "BgICBgYFAQMECA==",
+      "energy": 33.0,
+      "yearsOld": 54,
+      "position": {
+        "x": 39,
+        "y": 71,
+        "magnitude": 81.00617,
+        "sqrMagnitude": 6562
+      },
+      "lastGen": 4,
+      "isAte": false,
+      "rotation": {
+        "x": -1,
+        "y": 1,
+        "magnitude": 1.41421354,
+        "sqrMagnitude": 2
+      }
+    },
+    {
+      "isDead": false,
+      "gens": "BgQCBgYFAQMACA==",
+      "energy": 52.0,
+      "yearsOld": 16,
+      "position": {
+        "x": 39,
+        "y": 72,
+        "magnitude": 81.88406,
+        "sqrMagnitude": 6705
+      },
+      "lastGen": 6,
+      "isAte": false,
+      "rotation": {
+        "x": 1,
+        "y": -1,
+        "magnitude": 1.41421354,
+        "sqrMagnitude": 2
+      }
+    },
+    {
+      "isDead": false,
+      "gens": "BgQCBgYFAQMACA==",
+      "energy": 21.0,
+      "yearsOld": 38,
+      "position": {
+        "x": 39,
+        "y": 73,
+        "magnitude": 82.7647247,
+        "sqrMagnitude": 6850
+      },
+      "lastGen": 8,
+      "isAte": false,
+      "rotation": {
+        "x": -1,
+        "y": 0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1
+      }
+    },
+    {
+      "isDead": false,
+      "gens": "BgQCBgYFAQMACA==",
+      "energy": 36.0,
+      "yearsOld": 60,
+      "position": {
+        "x": 39,
+        "y": 74,
+        "magnitude": 83.64807,
+        "sqrMagnitude": 6997
+      },
+      "lastGen": 0,
+      "isAte": false,
+      "rotation": {
+        "x": 1,
+        "y": -1,
+        "magnitude": 1.41421354,
+        "sqrMagnitude": 2
+      }
+    },
+    {
+      "isDead": true,
+      "gens": "BAUDBwUFBgQBAg==",
+      "energy": 60.0,
+      "yearsOld": 150,
+      "position": {
+        "x": 39,
+        "y": 90,
+        "magnitude": 98.08669,
+        "sqrMagnitude": 9621
+      },
+      "lastGen": 0,
+      "isAte": false,
+      "rotation": {
+        "x": 0,
+        "y": 1,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1
+      }
+    },
+    {
+      "isDead": false,
+      "gens": "BAUDBwUFBgQBAg==",
+      "energy": 60.0,
+      "yearsOld": 110,
+      "position": {
+        "x": 39,
+        "y": 91,
+        "magnitude": 99.00505,
+        "sqrMagnitude": 9802
+      },
+      "lastGen": 0,
+      "isAte": false,
+      "rotation": {
+        "x": -1,
+        "y": 0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1
+      }
+    },
+    {
+      "isDead": true,
+      "gens": "BAUDBwUFBwQBAg==",
+      "energy": 60.0,
+      "yearsOld": 150,
+      "position": {
+        "x": 39,
+        "y": 92,
+        "magnitude": 99.92497,
+        "sqrMagnitude": 9985
+      },
+      "lastGen": 0,
+      "isAte": false,
+      "rotation": {
+        "x": 1,
+        "y": 0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1
+      }
+    },
+    {
+      "isDead": false,
+      "gens": "BgICBgYFAQMECA==",
+      "energy": 35.0,
+      "yearsOld": 64,
+      "position": {
+        "x": 40,
+        "y": 68,
+        "magnitude": 78.892334,
+        "sqrMagnitude": 6224
+      },
+      "lastGen": 4,
+      "isAte": false,
+      "rotation": {
+        "x": 0,
+        "y": 1,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1
+      }
+    },
+    {
+      "isDead": false,
+      "gens": "BgICBgYFAQMECA==",
+      "energy": 52.5,
+      "yearsOld": 75,
+      "position": {
+        "x": 40,
+        "y": 71,
+        "magnitude": 81.49233,
+        "sqrMagnitude": 6641
+      },
+      "lastGen": 5,
+      "isAte": false,
+      "rotation": {
+        "x": 0,
+        "y": 1,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1
+      }
+    },
+    {
+      "isDead": true,
+      "gens": "BAUDBwUFBgQBAg==",
+      "energy": 24.0,
+      "yearsOld": 150,
+      "position": {
+        "x": 40,
+        "y": 90,
+        "magnitude": 98.48858,
+        "sqrMagnitude": 9700
+      },
+      "lastGen": 0,
+      "isAte": false,
+      "rotation": {
+        "x": -1,
+        "y": 1,
+        "magnitude": 1.41421354,
+        "sqrMagnitude": 2
+      }
+    },
+    {
+      "isDead": true,
+      "gens": "BAUDBwUFBwQBAg==",
+      "energy": 60.0,
+      "yearsOld": 150,
+      "position": {
+        "x": 40,
+        "y": 91,
+        "magnitude": 99.40322,
+        "sqrMagnitude": 9881
+      },
+      "lastGen": 0,
+      "isAte": false,
+      "rotation": {
+        "x": -1,
+        "y": -1,
+        "magnitude": 1.41421354,
+        "sqrMagnitude": 2
+      }
+    },
+    {
+      "isDead": true,
+      "gens": "BAUDBwUFBwQBAg==",
+      "energy": 60.0,
+      "yearsOld": 150,
+      "position": {
+        "x": 40,
+        "y": 92,
+        "magnitude": 100.319489,
+        "sqrMagnitude": 10064
+      },
+      "lastGen": 0,
+      "isAte": false,
+      "rotation": {
+        "x": 0,
+        "y": -1,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1
+      }
+    },
+    {
+      "isDead": true,
+      "gens": "BAAJBgIGAQMHBg==",
+      "energy": 41.9999275,
+      "yearsOld": 150,
+      "position": {
+        "x": 41,
+        "y": 67,
+        "magnitude": 78.54935,
+        "sqrMagnitude": 6170
+      },
+      "lastGen": 0,
+      "isAte": false,
+      "rotation": {
+        "x": -1,
+        "y": 1,
+        "magnitude": 1.41421354,
+        "sqrMagnitude": 2
+      }
+    },
+    {
+      "isDead": false,
+      "gens": "BAUJBgIGAQMHBg==",
+      "energy": 35.79999,
+      "yearsOld": 28,
+      "position": {
+        "x": 43,
+        "y": 57,
+        "magnitude": 71.40028,
+        "sqrMagnitude": 5098
+      },
+      "lastGen": 8,
+      "isAte": false,
+      "rotation": {
+        "x": 1,
+        "y": -1,
+        "magnitude": 1.41421354,
+        "sqrMagnitude": 2
+      }
+    },
+    {
+      "isDead": true,
+      "gens": "BgIFAQMFCAMIAA==",
+      "energy": 0.0,
+      "yearsOld": 52,
+      "position": {
+        "x": 45,
+        "y": 37,
+        "magnitude": 58.2580452,
+        "sqrMagnitude": 3394
+      },
+      "lastGen": 2,
+      "isAte": false,
+      "rotation": {
+        "x": 1,
+        "y": -1,
+        "magnitude": 1.41421354,
+        "sqrMagnitude": 2
+      }
+    },
+    {
+      "isDead": true,
+      "gens": "CQMCBAIGBwUHBw==",
+      "energy": 53.9998627,
+      "yearsOld": 150,
+      "position": {
+        "x": 45,
+        "y": 101,
+        "magnitude": 110.571243,
+        "sqrMagnitude": 12226
+      },
+      "lastGen": 0,
+      "isAte": false,
+      "rotation": {
+        "x": 1,
+        "y": -1,
+        "magnitude": 1.41421354,
+        "sqrMagnitude": 2
+      }
+    },
+    {
+      "isDead": false,
+      "gens": "CQMCBAIGBwUHBw==",
+      "energy": 42.7998962,
+      "yearsOld": 128,
+      "position": {
+        "x": 46,
+        "y": 19,
+        "magnitude": 49.76947,
+        "sqrMagnitude": 2477
+      },
+      "lastGen": 8,
+      "isAte": false,
+      "rotation": {
+        "x": 1,
+        "y": 1,
+        "magnitude": 1.41421354,
+        "sqrMagnitude": 2
+      }
+    },
+    {
+      "isDead": false,
+      "gens": "BgIFAQMFCAMIAA==",
+      "energy": 43.0,
+      "yearsOld": 40,
+      "position": {
+        "x": 46,
+        "y": 36,
+        "magnitude": 58.4123268,
+        "sqrMagnitude": 3412
+      },
+      "lastGen": 0,
+      "isAte": false,
+      "rotation": {
+        "x": -1,
+        "y": 1,
+        "magnitude": 1.41421354,
+        "sqrMagnitude": 2
+      }
+    },
+    {
+      "isDead": true,
+      "gens": "BgIFAQMFCAMIAA==",
+      "energy": 0.0,
+      "yearsOld": 52,
+      "position": {
+        "x": 46,
+        "y": 37,
+        "magnitude": 59.03389,
+        "sqrMagnitude": 3485
+      },
+      "lastGen": 2,
+      "isAte": false,
+      "rotation": {
+        "x": -1,
+        "y": 0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1
+      }
+    },
+    {
+      "isDead": false,
+      "gens": "CQMCBAIGBwUHBw==",
+      "energy": 52.3999176,
+      "yearsOld": 64,
+      "position": {
+        "x": 47,
+        "y": 20,
+        "magnitude": 51.078373,
+        "sqrMagnitude": 2609
+      },
+      "lastGen": 4,
+      "isAte": false,
+      "rotation": {
+        "x": -1,
+        "y": -1,
+        "magnitude": 1.41421354,
+        "sqrMagnitude": 2
+      }
+    },
+    {
+      "isDead": true,
+      "gens": "BgIFAQMFCAMIAA==",
+      "energy": 0.0,
+      "yearsOld": 52,
+      "position": {
+        "x": 47,
+        "y": 38,
+        "magnitude": 60.440052,
+        "sqrMagnitude": 3653
+      },
+      "lastGen": 2,
+      "isAte": true,
+      "rotation": {
+        "x": -1,
+        "y": -1,
+        "magnitude": 1.41421354,
+        "sqrMagnitude": 2
+      }
+    },
+    {
+      "isDead": true,
+      "gens": "BgIFAQMFCAMIAA==",
+      "energy": 0.0,
+      "yearsOld": 52,
+      "position": {
+        "x": 48,
+        "y": 36,
+        "magnitude": 60.0,
+        "sqrMagnitude": 3600
+      },
+      "lastGen": 2,
+      "isAte": false,
+      "rotation": {
+        "x": 1,
+        "y": -1,
+        "magnitude": 1.41421354,
+        "sqrMagnitude": 2
+      }
+    },
+    {
+      "isDead": true,
+      "gens": "BgIFAQMFCAMIAA==",
+      "energy": 7.0,
+      "yearsOld": 150,
+      "position": {
+        "x": 48,
+        "y": 37,
+        "magnitude": 60.60528,
+        "sqrMagnitude": 3673
+      },
+      "lastGen": 0,
+      "isAte": false,
+      "rotation": {
+        "x": -1,
+        "y": 1,
+        "magnitude": 1.41421354,
+        "sqrMagnitude": 2
+      }
+    },
+    {
+      "isDead": true,
+      "gens": "BgIFAQMFCAMIAA==",
+      "energy": 0.0,
+      "yearsOld": 52,
+      "position": {
+        "x": 49,
+        "y": 35,
+        "magnitude": 60.2162781,
+        "sqrMagnitude": 3626
+      },
+      "lastGen": 2,
+      "isAte": false,
+      "rotation": {
+        "x": 1,
+        "y": 0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1
+      }
+    },
+    {
+      "isDead": false,
+      "gens": "BgEFAQMFCAMIAA==",
+      "energy": 41.5,
+      "yearsOld": 27,
+      "position": {
+        "x": 49,
+        "y": 36,
+        "magnitude": 60.80296,
+        "sqrMagnitude": 3697
+      },
+      "lastGen": 7,
+      "isAte": false,
+      "rotation": {
+        "x": 0,
+        "y": 1,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1
+      }
+    },
+    {
+      "isDead": true,
+      "gens": "BAAJBgIGAQMHBg==",
+      "energy": 41.9999275,
+      "yearsOld": 150,
+      "position": {
+        "x": 49,
+        "y": 59,
+        "magnitude": 76.6942,
+        "sqrMagnitude": 5882
+      },
+      "lastGen": 0,
+      "isAte": false,
+      "rotation": {
+        "x": -1,
+        "y": 1,
+        "magnitude": 1.41421354,
+        "sqrMagnitude": 2
+      }
+    },
+    {
+      "isDead": true,
+      "gens": "BgIFAQMFCAMIAA==",
+      "energy": 0.0,
+      "yearsOld": 52,
+      "position": {
+        "x": 50,
+        "y": 35,
+        "magnitude": 61.03278,
+        "sqrMagnitude": 3725
+      },
+      "lastGen": 2,
+      "isAte": false,
+      "rotation": {
+        "x": -1,
+        "y": 1,
+        "magnitude": 1.41421354,
+        "sqrMagnitude": 2
+      }
+    },
+    {
+      "isDead": true,
+      "gens": "BgIFAQMFCAMIAA==",
+      "energy": 0.0,
+      "yearsOld": 52,
+      "position": {
+        "x": 50,
+        "y": 36,
+        "magnitude": 61.6116867,
+        "sqrMagnitude": 3796
+      },
+      "lastGen": 2,
+      "isAte": false,
+      "rotation": {
+        "x": -1,
+        "y": 0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1
+      }
+    },
+    {
+      "isDead": true,
+      "gens": "BgIFAQMFCAMIAA==",
+      "energy": 0.0,
+      "yearsOld": 52,
+      "position": {
+        "x": 50,
+        "y": 37,
+        "magnitude": 62.2012863,
+        "sqrMagnitude": 3869
+      },
+      "lastGen": 2,
+      "isAte": false,
+      "rotation": {
+        "x": 0,
+        "y": -1,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1
+      }
+    },
+    {
+      "isDead": true,
+      "gens": "BQEDAgQABwUJCA==",
+      "energy": 0.0,
+      "yearsOld": 9,
+      "position": {
+        "x": 52,
+        "y": 42,
+        "magnitude": 66.8431,
+        "sqrMagnitude": 4468
+      },
+      "lastGen": 9,
+      "isAte": false,
+      "rotation": {
+        "x": 1,
+        "y": 0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1
+      }
+    },
+    {
+      "isDead": true,
+      "gens": "BAAJBgIGAQMHBg==",
+      "energy": 41.9999275,
+      "yearsOld": 150,
+      "position": {
+        "x": 60,
+        "y": 48,
+        "magnitude": 76.8374939,
+        "sqrMagnitude": 5904
+      },
+      "lastGen": 0,
+      "isAte": false,
+      "rotation": {
+        "x": -1,
+        "y": -1,
+        "magnitude": 1.41421354,
+        "sqrMagnitude": 2
+      }
+    },
+    {
+      "isDead": true,
+      "gens": "CAQJAgcDBgYHBg==",
+      "energy": 14.9999495,
+      "yearsOld": 150,
+      "position": {
+        "x": 62,
+        "y": 13,
+        "magnitude": 63.3482437,
+        "sqrMagnitude": 4013
+      },
+      "lastGen": 0,
+      "isAte": false,
+      "rotation": {
+        "x": -1,
+        "y": 0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1
+      }
+    },
+    {
+      "isDead": true,
+      "gens": "BAAJBgIGAQMHBg==",
+      "energy": 23.99994,
+      "yearsOld": 150,
+      "position": {
+        "x": 62,
+        "y": 42,
+        "magnitude": 74.88658,
+        "sqrMagnitude": 5608
+      },
+      "lastGen": 0,
+      "isAte": false,
+      "rotation": {
+        "x": -1,
+        "y": -1,
+        "magnitude": 1.41421354,
+        "sqrMagnitude": 2
+      }
+    },
+    {
+      "isDead": true,
+      "gens": "BQIBBgkDBwgCCQ==",
+      "energy": 0.0,
+      "yearsOld": 130,
+      "position": {
+        "x": 62,
+        "y": 54,
+        "magnitude": 82.2192154,
+        "sqrMagnitude": 6760
+      },
+      "lastGen": 0,
+      "isAte": true,
+      "rotation": {
+        "x": 0,
+        "y": 1,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1
+      }
+    },
+    {
+      "isDead": true,
+      "gens": "BAAJBgIGAQMHBg==",
+      "energy": 41.9999275,
+      "yearsOld": 150,
+      "position": {
+        "x": 67,
+        "y": 40,
+        "magnitude": 78.03204,
+        "sqrMagnitude": 6089
+      },
+      "lastGen": 0,
+      "isAte": false,
+      "rotation": {
+        "x": 0,
+        "y": -1,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1
+      }
+    },
+    {
+      "isDead": true,
+      "gens": "AAMFBwUAAQYABQ==",
+      "energy": 4.000003,
+      "yearsOld": 150,
+      "position": {
+        "x": 68,
+        "y": 12,
+        "magnitude": 69.050705,
+        "sqrMagnitude": 4768
+      },
+      "lastGen": 0,
+      "isAte": false,
+      "rotation": {
+        "x": -1,
+        "y": 0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1
+      }
+    },
+    {
+      "isDead": true,
+      "gens": "CQABBwcGBgkEBQ==",
+      "energy": 5.99999428,
+      "yearsOld": 150,
+      "position": {
+        "x": 71,
+        "y": 74,
+        "magnitude": 102.552429,
+        "sqrMagnitude": 10517
+      },
+      "lastGen": 0,
+      "isAte": false,
+      "rotation": {
+        "x": 1,
+        "y": 1,
+        "magnitude": 1.41421354,
+        "sqrMagnitude": 2
+      }
+    },
+    {
+      "isDead": true,
+      "gens": "AAMFBwUAAQYABQ==",
+      "energy": 5.59999943,
+      "yearsOld": 2,
+      "position": {
+        "x": 75,
+        "y": 13,
+        "magnitude": 76.11833,
+        "sqrMagnitude": 5794
+      },
+      "lastGen": 2,
+      "isAte": false,
+      "rotation": {
+        "x": -1,
+        "y": -1,
+        "magnitude": 1.41421354,
+        "sqrMagnitude": 2
+      }
+    },
+    {
+      "isDead": false,
+      "gens": "BAAJBgIGAQMHBg==",
+      "energy": 4.399936,
+      "yearsOld": 74,
+      "position": {
+        "x": 75,
+        "y": 62,
+        "magnitude": 97.3087845,
+        "sqrMagnitude": 9469
+      },
+      "lastGen": 4,
+      "isAte": false,
+      "rotation": {
+        "x": 0,
+        "y": 1,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1
+      }
+    },
+    {
+      "isDead": false,
+      "gens": "BAAJBgIGAQMHBg==",
+      "energy": 31.0000038,
+      "yearsOld": 10,
+      "position": {
+        "x": 75,
+        "y": 63,
+        "magnitude": 97.94897,
+        "sqrMagnitude": 9594
+      },
+      "lastGen": 0,
+      "isAte": false,
+      "rotation": {
+        "x": 0,
+        "y": -1,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1
+      }
+    },
+    {
+      "isDead": true,
+      "gens": "BAAJBgIGAQMHBg==",
+      "energy": 41.9999275,
+      "yearsOld": 150,
+      "position": {
+        "x": 75,
+        "y": 70,
+        "magnitude": 102.591423,
+        "sqrMagnitude": 10525
+      },
+      "lastGen": 0,
+      "isAte": false,
+      "rotation": {
+        "x": 0,
+        "y": 1,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1
+      }
+    },
+    {
+      "isDead": false,
+      "gens": "BAAJBgIGAQMHBg==",
+      "energy": 34.7999458,
+      "yearsOld": 138,
+      "position": {
+        "x": 81,
+        "y": 61,
+        "magnitude": 101.4002,
+        "sqrMagnitude": 10282
+      },
+      "lastGen": 8,
+      "isAte": false,
+      "rotation": {
+        "x": 1,
+        "y": 1,
+        "magnitude": 1.41421354,
+        "sqrMagnitude": 2
+      }
+    },
+    {
+      "isDead": true,
+      "gens": "AgIBAggECQYIBQ==",
+      "energy": 3.19999981,
+      "yearsOld": 150,
+      "position": {
+        "x": 82,
+        "y": 14,
+        "magnitude": 83.18654,
+        "sqrMagnitude": 6920
+      },
+      "lastGen": 0,
+      "isAte": false,
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "magnitude": 0.0,
+        "sqrMagnitude": 0
+      }
+    },
+    {
+      "isDead": true,
+      "gens": "AgIBAggECQYIBQ==",
+      "energy": 3.19999981,
+      "yearsOld": 150,
+      "position": {
+        "x": 82,
+        "y": 15,
+        "magnitude": 83.3606644,
+        "sqrMagnitude": 6949
+      },
+      "lastGen": 0,
+      "isAte": false,
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "magnitude": 0.0,
+        "sqrMagnitude": 0
+      }
+    },
+    {
+      "isDead": true,
+      "gens": "AgIBAggECQYIBQ==",
+      "energy": 5.59999943,
+      "yearsOld": 150,
+      "position": {
+        "x": 83,
+        "y": 14,
+        "magnitude": 84.17244,
+        "sqrMagnitude": 7085
+      },
+      "lastGen": 0,
+      "isAte": false,
+      "rotation": {
+        "x": -1,
+        "y": 1,
+        "magnitude": 1.41421354,
+        "sqrMagnitude": 2
+      }
+    },
+    {
+      "isDead": true,
+      "gens": "CAQDCAgHBAIAAQ==",
+      "energy": 39.0001144,
+      "yearsOld": 150,
+      "position": {
+        "x": 84,
+        "y": 42,
+        "magnitude": 93.914856,
+        "sqrMagnitude": 8820
+      },
+      "lastGen": 0,
+      "isAte": false,
+      "rotation": {
+        "x": -1,
+        "y": 0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1
+      }
+    },
+    {
+      "isDead": true,
+      "gens": "CQMJBAMCBgYGBw==",
+      "energy": 18.0000172,
+      "yearsOld": 150,
+      "position": {
+        "x": 96,
+        "y": 34,
+        "magnitude": 101.843018,
+        "sqrMagnitude": 10372
+      },
+      "lastGen": 0,
+      "isAte": false,
+      "rotation": {
+        "x": 1,
+        "y": -1,
+        "magnitude": 1.41421354,
+        "sqrMagnitude": 2
+      }
+    },
+    {
+      "isDead": true,
+      "gens": "BQcAAwEFBgkDBw==",
+      "energy": 51.0,
+      "yearsOld": 150,
+      "position": {
+        "x": 96,
+        "y": 74,
+        "magnitude": 121.210564,
+        "sqrMagnitude": 14692
+      },
+      "lastGen": 0,
+      "isAte": false,
+      "rotation": {
+        "x": 0,
+        "y": 1,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1
+      }
+    },
+    {
+      "isDead": true,
+      "gens": "AwEHAAMDAQMIAw==",
+      "energy": 55.3,
+      "yearsOld": 150,
+      "position": {
+        "x": 96,
+        "y": 96,
+        "magnitude": 135.7645,
+        "sqrMagnitude": 18432
+      },
+      "lastGen": 0,
+      "isAte": false,
+      "rotation": {
+        "x": 0,
+        "y": -1,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1
+      }
+    },
+    {
+      "isDead": true,
+      "gens": "BAUFBwADAAICCQ==",
+      "energy": 8.999941,
+      "yearsOld": 150,
+      "position": {
+        "x": 97,
+        "y": 80,
+        "magnitude": 125.733849,
+        "sqrMagnitude": 15809
+      },
+      "lastGen": 0,
+      "isAte": false,
+      "rotation": {
+        "x": -1,
+        "y": 0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1
+      }
+    }
+  ]
+}

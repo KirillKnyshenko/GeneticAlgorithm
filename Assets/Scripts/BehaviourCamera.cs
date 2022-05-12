@@ -10,23 +10,27 @@ public class BehaviourCamera : MonoBehaviour
     private Cell _cell;
     private float _cameraMaxSize;
 
-
     [SerializeField] private int scrollSpeed, moveSpeed;
     [SerializeField] private int _regenerationCount;
     [SerializeField] private Transform _selected;
     [SerializeField] private SpriteRenderer _selectedSpriteRenderer;
     [SerializeField] private GameObject _panelMenu;
     
-    private void Start()
+    private void Awake()
     {
         Application.targetFrameRate = 60;
-        _camera = Camera.main;
+        SetCamera();
+    }
+
+    public void SetCamera()
+    {
+        _camera = GetComponent<Camera>();
         transform.position = (new Vector3(Manager.Instance.world.size, Manager.Instance.world.size) / 2) - Vector3.forward;
         transform.position = new Vector3(transform.position.x, transform.position.y - 0.5f, transform.position.z);
         _cameraMaxSize = Manager.Instance.world.size / 2;
         _camera.orthographicSize = _cameraMaxSize;
     }
-
+    
     private void LateUpdate()
     {
         ReselectCell();

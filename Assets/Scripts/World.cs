@@ -15,4 +15,38 @@ public class World : ScriptableObject
     [Range(0, 1)]public float chanceMutate;
     [Range(0, 1)] public float babyCost;
     public bool isBirthAfterDeath;
+    
+    public SaveManager.WorldData CreateWorldData()
+    {
+        SaveManager.WorldData world = new SaveManager.WorldData();
+
+        world.size = size;
+        world.countOfBorn = countOfBorn;
+        world.maxGens = maxGens;
+        world.maxEnergy = maxEnergy;
+        world.actionEnergy = actionEnergy;
+        world.energyBoost = energyBoost;
+        world.relatedness = relatedness;
+        world.yearsOldMax = yearsOldMax;
+        world.chanceMutate = chanceMutate;
+        world.babyCost = babyCost;
+        world.isBirthAfterDeath = isBirthAfterDeath;
+
+        return world;
+    }
+    
+    public void SetWorldData(SaveManager.WorldData world)
+    {
+        size = world.size;
+        countOfBorn = world.countOfBorn;
+        maxGens = world.maxGens;
+        maxEnergy = world.maxEnergy;
+        actionEnergy = world.actionEnergy;
+        energyBoost = world.energyBoost;
+        relatedness = world.relatedness;
+        yearsOldMax = world.yearsOldMax;
+        chanceMutate = world.chanceMutate;
+        babyCost = world.babyCost;
+        isBirthAfterDeath = world.isBirthAfterDeath;
+    }
 }

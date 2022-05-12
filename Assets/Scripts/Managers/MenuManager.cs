@@ -48,11 +48,29 @@ public class MenuManager : MonoBehaviour
         world.yearsOldMax = (int)_yearsOldMax.value;
         world.chanceMutate = _chanceMutate.value;
         world.babyCost = _babyCost.value;
+        LoadScene(1);
+    }
+
+    public void LoadScene(int number)
+    {
+        PlayerPrefs.DeleteAll();
+        SceneManager.LoadScene(number);
+    }
+    
+    public void LoadSave()
+    {
+        PlayerPrefs.SetInt("Key", 1);
         SceneManager.LoadScene(1);
     }
 
     public void Exit()
     {
         Application.Quit();
+    }
+    
+    public void Save()
+    {
+        PlayerPrefs.SetInt("Key", 1);
+        SaveManager.Save();
     }
 }

@@ -24,7 +24,7 @@ public class CellCore
         SetEnergy(GetEnergy() + add);
     }
     
-    private int _yearsOld;
+    protected int _yearsOld;
     public int YearsOld 
     {
         get => _yearsOld;
@@ -38,7 +38,7 @@ public class CellCore
     protected Vector2Int position;
     public Vector2Int Position => position;
 
-    protected Transform visual;
+    public Transform visual;
     protected SpriteRenderer spriteRenderer;
 
     protected World.PowerType type;
@@ -66,7 +66,10 @@ public class CellCore
             Manager.Instance.cells[newPosition.x, newPosition.y] = cell;
             Manager.Instance.cells[position.x, position.y] = null;
             position = newPosition;
-            visual.position = (Vector2)position;
+            if (visual != null)
+            {
+                visual.position = (Vector2) position;
+            }
         }
     }
 
@@ -128,8 +131,11 @@ public class CellCore
     private void Death()
     {
         isDead = true;
-
-        visual.GetComponent<SpriteRenderer>().color = Color.black;
+        
+        if (spriteRenderer != null)
+        {
+            spriteRenderer.color = Color.black;
+        }
     }
     
     #region MyMono

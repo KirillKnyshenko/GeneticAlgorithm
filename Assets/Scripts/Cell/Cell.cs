@@ -24,7 +24,21 @@ public class Cell : CellCore
     {
         visual = newVisual;
         spriteRenderer = visual.GetComponent<SpriteRenderer>();
-    }    
+    }
+
+    public void SetCellData(SaveManager.CellData data)
+    {
+        isDead= data.isDead;
+        gens = data.gens;
+        SetEnergy(data.energy);
+        _yearsOld= data.yearsOld;
+        position = data.position;
+        _lastGen = data.lastGen;
+        _isAte= data.isAte;
+        _rotation = data.rotation;
+        
+        CalculationCell();
+    }
     
     public void Initialization(int maxGens, Vector2Int newPosition, byte[] newGens, float energy)
     {
@@ -66,18 +80,23 @@ public class Cell : CellCore
             }
         }
 
-        //Сумма генов
-        for (int i = 0; i < gens.Length; i++)
-        {
-            _sumOfGens += gens[i];
-        }
-
         //Позиция
         position = newPosition;
 
         //Поворот
         _rotation = Rotate();
 
+        CalculationCell();
+    }
+
+    private void CalculationCell()
+    {
+        //Сумма генов
+        for (int i = 0; i < gens.Length; i++)
+        {
+            _sumOfGens += gens[i];
+        }
+        
         //Отображение
         visual.position = (Vector2)position;
         visual.gameObject.SetActive(true);
@@ -126,7 +145,10 @@ public class Cell : CellCore
         if (Manager.Instance.colorMod ==Manager.ViewColor.EnergyColor)
         {
             CreateEnergyColor();
-            spriteRenderer.color = _energyColor;
+            if (spriteRenderer != null)
+            {
+                spriteRenderer.color = _energyColor;
+            }
         }
         
         Eating();
@@ -336,6 +358,22 @@ public class Cell : CellCore
         return false;
     }
 
+    public SaveManager.CellData CreateCellData()
+    {
+        SaveManager.CellData data = new SaveManager.CellData();
+        
+        data.isDead = isDead;
+        data.gens = gens;
+        data.energy = GetEnergy();
+        data.yearsOld = YearsOld;
+        data.position = Position;
+        data.rotation = Rotation;
+        data.lastGen = _lastGen;
+        data.isAte = _isAte;
+
+        return data;
+    }
+    
     #region Color
 
     public void DrawColor()
