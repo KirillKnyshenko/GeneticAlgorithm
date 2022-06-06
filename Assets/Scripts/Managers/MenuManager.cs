@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -19,7 +20,8 @@ public class MenuManager : MonoBehaviour
     [SerializeField] private Slider _yearsOldMax;
     [SerializeField] private Slider _chanceMutate;
     [SerializeField] private Slider _babyCost;
-
+    [SerializeField] private TMP_Text _saveName, _saveError;
+    [SerializeField] private Transform _saveAsField;
     private void Start()
     {
         Instance = this;
@@ -67,10 +69,18 @@ public class MenuManager : MonoBehaviour
     {
         Application.Quit();
     }
-    
+
     public void Save()
     {
         PlayerPrefs.SetInt("Key", 1);
-        SaveManager.Save();
+        if (!SaveManager.Save(_saveName.text))
+        {
+            _saveError.text = "Файл уже существует или открыт.";
+        }
+        else
+        {
+            _saveError.text = "";
+            _saveAsField.gameObject.SetActive(false);
+        }
     }
 }

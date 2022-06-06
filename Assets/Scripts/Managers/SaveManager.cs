@@ -44,11 +44,12 @@ public class SaveManager : MonoBehaviour
         public WorldData worldData;
         public ManagerData managerData = new ManagerData();
         public List<CellData> cells = new List<CellData>();
+        public byte[] texture;
     }
     
-    public static void Load()
+    public static void Load(string fileName)
     {
-        Data data = JsonConvert.DeserializeObject<Data>(File.ReadAllText(Application.dataPath + "/data.json"));
+        Data data = JsonConvert.DeserializeObject<Data>(File.ReadAllText(Application.dataPath + $"/{fileName}.json"));
 
         if (data != null)
         {
@@ -73,32 +74,52 @@ public class SaveManager : MonoBehaviour
         }
     }
 
-    public static void Save()
+    public static bool Save(string fileName)
     {
+        if (File.Exists(Application.dataPath + @"\" + fileName + ".json"))
+        {
+            return false;
+        }
+
         Data data = new Data();
         var cells = Manager.Instance.cells;
 
+        var tex = new Texture2D(cells.GetLength(0), cells.GetLength(0));
         for (int i = 0; i < cells.GetLength(0); i++)
         {
             for (int j = 0; j < cells.GetLength(1); j++)
             {
                 if (cells[i, j] != null)
                 {
-                    data.cells.Add(cells[i, j].CreateCellData());
+                    var dt = cells[i, j].CreateCellData();
+                    data.cells.Add(dt);
+                    tex.SetPixel(i, j,cells[i, j].GenColor);
+                }
+                else
+                {
+                    tex.SetPixel(i, j, Color.gray);
                 }
             }
         }
 
+        tex.Apply();
+        
         data.worldData = Manager.Instance.world.CreateWorldData();
         data.managerData.born = Manager.Instance.born;
         data.managerData.ticks = Manager.Instance.ticks;
 
+        data.texture = tex.GetRawTextureData();
+        
+        
         File.WriteAllText(
-            Application.dataPath + "/data.json",
+            Application.dataPath + $"/{fileName}.json",
             JsonConvert.SerializeObject(data, Formatting.Indented, new JsonSerializerSettings()
             {
                 ReferenceLoopHandling = ReferenceLoopHandling.Ignore
             })
         );
+
+
+        return true;
     }
 }

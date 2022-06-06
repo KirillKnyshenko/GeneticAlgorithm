@@ -28,9 +28,10 @@ public class Manager : MonoBehaviour
     {
         Instance = this;
         colorMod = ViewColor.GenColor;
-        if (PlayerPrefs.HasKey("Key"))
+        if (PlayerPrefs.HasKey("LoadedSave"))
         {
-            SaveManager.Load();
+            SaveManager.Load(PlayerPrefs.GetString("LoadedSave"));
+            PlayerPrefs.DeleteAll();
         }
         else
         {
