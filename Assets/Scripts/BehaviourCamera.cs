@@ -27,7 +27,7 @@ public class BehaviourCamera : MonoBehaviour
         _camera = GetComponent<Camera>();
         transform.position = (new Vector3(Manager.Instance.world.size, Manager.Instance.world.size) / 2) - Vector3.forward;
         transform.position = new Vector3(transform.position.x, transform.position.y - 0.5f, transform.position.z);
-        _cameraMaxSize = Manager.Instance.world.size / 2;
+        _cameraMaxSize = Manager.Instance.world.size / 2 + 0.5f;
         _camera.orthographicSize = _cameraMaxSize;
     }
     
