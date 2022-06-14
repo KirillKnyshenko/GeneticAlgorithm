@@ -15,7 +15,7 @@ public class SaveItem : MonoBehaviour
 
     public void Delete()
     {
-        File.Delete(Application.dataPath + @$"/{text.text}.json");
+        File.Delete(SaveManager.savesFolder + @$"/{text.text}.json");
         GetComponentInParent<SavesList>().UpdateList();
     }
 
@@ -28,9 +28,9 @@ public class SaveItem : MonoBehaviour
     public void Init(string getFileNameWithoutExtension)
     {
         text.text = getFileNameWithoutExtension;
-        SaveManager.Data data = JsonConvert.DeserializeObject<SaveManager.Data>(File.ReadAllText(Application.dataPath + $"/{getFileNameWithoutExtension}.json"));
+        SaveManager.Data data = JsonConvert.DeserializeObject<SaveManager.Data>(File.ReadAllText(SaveManager.savesFolder + $"/{getFileNameWithoutExtension}.json"));
 
-        Debug.LogError(Application.dataPath + $"/{getFileNameWithoutExtension}.json");
+        Debug.LogError(SaveManager.savesFolder + $"/{getFileNameWithoutExtension}.json");
 
         var texture = new Texture2D(data.worldData.size, data.worldData.size);
         texture.LoadRawTextureData(data.texture);

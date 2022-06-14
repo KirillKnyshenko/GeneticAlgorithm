@@ -16,15 +16,17 @@ public class SavesList : MonoBehaviour
 
     public void UpdateList()
     {
-        var files = Directory.GetFiles(Application.dataPath, "*.json");
-
-        foreach (Transform it in holder)
+        if (Directory.Exists(SaveManager.savesFolder))
         {
-            if (it.gameObject != item.gameObject)
+            var files = Directory.GetFiles(SaveManager.savesFolder, "*.json");
+
+            foreach (Transform it in holder)
             {
-                Destroy(it.gameObject);
+                if (it.gameObject != item.gameObject)
+                {
+                    Destroy(it.gameObject);
+                }
             }
-        }
 
 
         for (int i = 0; i < files.Length; i++)
@@ -34,6 +36,7 @@ public class SavesList : MonoBehaviour
 
             saveItem.Init(Path.GetFileNameWithoutExtension(files[i]));
             saveItem.gameObject.SetActive(true);
+        }
         }
     }
 }

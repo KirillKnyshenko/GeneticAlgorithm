@@ -47,36 +47,46 @@ public class SaveManager : MonoBehaviour
         public byte[] texture;
     }
     
+    public static readonly string savesFolder = Directory.GetParent(Application.dataPath) + "/Saves/";
+    
     public static void Load(string fileName)
     {
-        Data data = JsonConvert.DeserializeObject<Data>(File.ReadAllText(Application.dataPath + $"/{fileName}.json"));
-
-        if (data != null)
+        if (Directory.Exists(savesFolder))
         {
-            Manager.Instance.StopAllCoroutines();
-            Manager.Instance.DeletePool();
-            Manager.Instance.ClearWorld();
-            Manager.Instance.world.SetWorldData(data.worldData);
-            Manager.Instance.WorldInit();
-            
-            Manager.Instance.born = data.managerData.born;
-            Manager.Instance.ticks = data.managerData.ticks;
+            Data data = JsonConvert.DeserializeObject<Data>(File.ReadAllText(savesFolder + $"/{fileName}.json"));
 
-            Camera.main.GetComponent<BehaviourCamera>().SetCamera();
-            
-            for (int i = 0; i < data.cells.Count; i++)
+            if (data != null)
             {
-                Cell cell = Manager.Instance.GetFromPool(data.cells[i].position);
-                cell.SetCellData(data.cells[i]);
+                Manager.Instance.StopAllCoroutines();
+                Manager.Instance.DeletePool();
+                Manager.Instance.ClearWorld();
+                Manager.Instance.world.SetWorldData(data.worldData);
+                Manager.Instance.WorldInit();
+
+                Manager.Instance.born = data.managerData.born;
+                Manager.Instance.ticks = data.managerData.ticks;
+
+                Camera.main.GetComponent<BehaviourCamera>().SetCamera();
+
+                for (int i = 0; i < data.cells.Count; i++)
+                {
+                    Cell cell = Manager.Instance.GetFromPool(data.cells[i].position);
+                    cell.SetCellData(data.cells[i]);
+                }
+
+                Manager.Instance.StartCoroutine(Manager.Instance.Tick());
             }
-            
-            Manager.Instance.StartCoroutine(Manager.Instance.Tick());
         }
     }
 
     public static bool Save(string fileName)
     {
-        if (File.Exists(Application.dataPath + @"\" + fileName + ".json"))
+        if (!Directory.Exists(savesFolder));
+        {
+            Directory.CreateDirectory(savesFolder);
+        }
+        
+        if (File.Exists(savesFolder + @"\" + fileName + ".json"))
         {
             return false;
         }
@@ -112,7 +122,7 @@ public class SaveManager : MonoBehaviour
         
         
         File.WriteAllText(
-            Application.dataPath + $"/{fileName}.json",
+            savesFolder + $"/{fileName}.json",
             JsonConvert.SerializeObject(data, Formatting.Indented, new JsonSerializerSettings()
             {
                 ReferenceLoopHandling = ReferenceLoopHandling.Ignore
