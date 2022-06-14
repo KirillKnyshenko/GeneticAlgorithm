@@ -30,6 +30,8 @@ public class SaveItem : MonoBehaviour
         text.text = getFileNameWithoutExtension;
         SaveManager.Data data = JsonConvert.DeserializeObject<SaveManager.Data>(File.ReadAllText(Application.dataPath + $"/{getFileNameWithoutExtension}.json"));
 
+        Debug.LogError(Application.dataPath + $"/{getFileNameWithoutExtension}.json");
+
         var texture = new Texture2D(data.worldData.size, data.worldData.size);
         texture.LoadRawTextureData(data.texture);
         texture.Apply();

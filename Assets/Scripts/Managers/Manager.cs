@@ -53,7 +53,14 @@ public class Manager : MonoBehaviour
     {
         cells = new Cell[world.size, world.size];
         _worldPlace.localScale = new Vector3(world.size, world.size, 0);
-        _worldPlace.position = new Vector3(world.size/2, world.size/2, 0);
+        if (world.size % 2 != 0)
+        {
+            _worldPlace.position = new Vector3(world.size / 2, world.size / 2, 0);
+        }
+        else
+        {
+            _worldPlace.position = new Vector3(world.size / 2 - 0.5f, world.size / 2 - 0.5f, 0);
+        }
         StartPool();
     }
     

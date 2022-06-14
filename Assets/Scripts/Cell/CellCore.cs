@@ -48,9 +48,9 @@ public class CellCore
     {
         if (Type == World.PowerType.Carnivores)
         {
-            if (GetEnergy() < Manager.Instance.world.actionEnergy / 2) return;
+            if (GetEnergy() < Manager.Instance.world.actionEnergy / 3) return;
         
-            EnergyConsumption(Manager.Instance.world.actionEnergy / 2);
+            EnergyConsumption(Manager.Instance.world.actionEnergy / 3);
         }
         else 
         {

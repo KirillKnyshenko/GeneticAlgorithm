@@ -22,6 +22,7 @@ public class MenuManager : MonoBehaviour
     [SerializeField] private Slider _babyCost;
     [SerializeField] private TMP_Text _saveName, _saveError;
     [SerializeField] private Transform _saveAsField;
+
     private void Start()
     {
         Instance = this;

@@ -246,7 +246,7 @@ public class Cell : CellCore
         float babyCost;
         if (type == World.PowerType.Carnivores)
         {
-            babyCost = (Manager.Instance.world.babyCost / 10) * Manager.Instance.world.maxEnergy;
+            babyCost = (Manager.Instance.world.babyCost / 6) * Manager.Instance.world.maxEnergy;
         }
         else
         {
@@ -316,7 +316,7 @@ public class Cell : CellCore
 
             if (!_isAte && (type == World.PowerType.Omnivorous))
             {
-                EnergyAdd(Manager.Instance.world.energyBoost * 0.3f);
+                EnergyAdd(Manager.Instance.world.energyBoost * 0.55f);
             }
         }
     }
